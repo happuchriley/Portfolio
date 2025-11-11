@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Riley Happuch - Digital Designer & Front-End Developer creating modern web experiences with React, TypeScript, and cutting-edge technologies."
+    />
+    <meta
+      name="keywords"
+      content="front-end developer, UI/UX designer, React developer, web development, digital design"
+    />
+    <meta name="author" content="Riley Happuch" />
+    <title>Riley Happuch - Digital Designer & Front-End Developer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bolt-black": "#000000",
+              "bolt-white": "#ffffff",
+              "bolt-green": "#00d12d",
+              "bolt-blue": "#0066ff",
+              "bolt-gray": "#f5f5f5",
+              "bolt-dark-gray": "#1a1a1a",
+              "bolt-text": "#333333",
+              "bolt-text-light": "#666666",
+              "bolt-border": "rgba(0, 0, 0, 0.1)",
+            },
+            fontFamily: {
+              primary: ["Inter", "sans-serif"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  </head>
+  <body class="font-primary text-bolt-text bg-bolt-white">
+    <header
+      class="bg-bolt-white py-4 fixed top-0 w-full z-50 border-b border-bolt-border backdrop-blur-md"
+    >
+      <nav
+        class="container mx-auto px-4 md:px-6 flex justify-between items-center"
+      >
+        <a href="#" class="text-xl font-black text-bolt-black z-50"
+          >RILEY HAPPUCH</a
+        >
+        <ul class="hidden md:flex items-center space-x-8">
+          <li>
+            <a
+              href="#hero"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="ml-4 bg-bolt-black text-bolt-white px-6 py-2 rounded-full font-semibold hover:bg-bolt-green hover:-translate-y-1 transition-all duration-300"
+              >Get In Touch</a
+            >
+          </li>
+        </ul>
+        <button
+          class="hamburger md:hidden flex flex-col gap-1 p-2 z-50"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span class="w-6 h-0.5 bg-bolt-black"></span>
+          <span class="w-6 h-0.5 bg-bolt-black"></span>
+          <span class="w-6 h-0.5 bg-bolt-black"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        class="mobile-menu fixed inset-0 bg-bolt-white z-40 flex flex-col items-center justify-center space-y-8 transform -translate-x-full transition-transform duration-300 md:hidden"
+      >
+        <a
+          href="#hero"
+          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          >Home</a
+        >
+        <a
+          href="#services"
+          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          >Services</a
+        >
+        <a
+          href="#projects"
+          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          >Projects</a
+        >
+        <a
+          href="#about"
+          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          >About</a
+        >
+        <a
+          href="#contact"
+          class="bg-bolt-black text-bolt-white px-8 py-3 rounded-full font-semibold hover:bg-bolt-green transition-colors"
+          >Get In Touch</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-bolt-white to-bolt-gray"
+      >
+        <div class="container mx-auto px-4 md:px-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
+          >
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Digital Designer &<br />
+                <span class="text-bolt-green">Front-End Developer</span>
+              </h1>
+              <p
+                class="text-lg md:text-xl text-bolt-text-light mb-8 leading-relaxed"
+              >
+                I create modern, high-performance web experiences that combine
+                cutting-edge design with robust engineering. Specializing in
+                React, TypeScript, and scalable front-end architecture.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
+              >
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a
+                  href="assets/docs/resume.pdf"
+                  download
+                  class="btn btn-secondary"
+                  >Download CV</a
+                >
+              </div>
+            </div>
+            <div class="relative h-80 flex items-center justify-center">
+              <div class="relative w-72 h-72">
+                <div
+                  class="absolute w-48 h-48 bg-bolt-green opacity-10 rounded-xl top-0 left-0 animate-float"
+                ></div>
+                <div
+                  class="absolute w-36 h-36 bg-bolt-green opacity-10 rounded-xl bottom-0 right-0 animate-float animate-delay-2s"
+                ></div>
+                <div
+                  class="absolute w-24 h-24 bg-bolt-green opacity-10 rounded-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float animate-delay-4s"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-16 md:py-24 bg-bolt-white">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">What I Do</h2>
+            <p class="text-lg text-bolt-text-light">
+              Comprehensive digital solutions built with modern technology and
+              user-centered design principles.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div
+              class="service-card bg-bolt-white p-8 rounded-2xl border border-bolt-border relative overflow-hidden fade-in-up"
+            >
+              <div
+                class="service-icon w-16 h-16 bg-bolt-green rounded-2xl flex items-center justify-center text-white text-xl font-bold mb-6 mx-auto"
+              >
+                FD
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">
+                Front-End Development
+              </h3>
+              <p class="text-bolt-text-light mb-6">
+                Building responsive, high-performance applications using React,
+                Vue, and modern JavaScript frameworks with TypeScript.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >React & Vue.js Development</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >TypeScript Integration</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >Performance Optimization</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div
+              class="service-card bg-bolt-white p-8 rounded-2xl border border-bolt-border relative overflow-hidden fade-in-up"
+            >
+              <div
+                class="service-icon w-16 h-16 bg-bolt-green rounded-2xl flex items-center justify-center text-white text-xl font-bold mb-6 mx-auto"
+              >
+                UI
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">UI/UX Design</h3>
+              <p class="text-bolt-text-light mb-6">
+                Creating intuitive, beautiful interfaces that enhance user
+                experience and drive engagement through data-driven design.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >User Interface Design</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >User Experience Research</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >Interactive Prototyping</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div
+              class="service-card bg-bolt-white p-8 rounded-2xl border border-bolt-border relative overflow-hidden fade-in-up"
+            >
+              <div
+                class="service-icon w-16 h-16 bg-bolt-green rounded-2xl flex items-center justify-center text-white text-xl font-bold mb-6 mx-auto"
+              >
+                AD
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-center">
+                App Development
+              </h3>
+              <p class="text-bolt-text-light mb-6">
+                Developing cross-platform mobile applications with React Native
+                and Flutter for seamless user experiences.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >React Native Development</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >Cross-Platform Solutions</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <span class="text-bolt-green mr-2">✓</span>
+                  <span class="text-bolt-text-light text-sm"
+                    >App Store Deployment</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        id="projects"
+        class="py-16 md:py-24 bg-bolt-black text-bolt-white"
+      >
+        <div class="container mx-auto px-4 md:px-6">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12">Featured Project</h2>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center fade-in-up"
+          >
+            <div
+              class="project-image relative rounded-2xl overflow-hidden order-1 lg:order-2"
+            >
+              <img
+                src="images/the misfits.png"
+                alt="The Misfits E-commerce Platform"
+                class="w-full h-auto rounded-2xl"
+                loading="lazy"
+              />
+              <div
+                class="project-badge absolute top-6 left-6 bg-bolt-green text-bolt-black px-4 py-2 rounded-full font-semibold text-sm"
+              >
+                Featured
+              </div>
+            </div>
+            <div class="project-content order-2 lg:order-1">
+              <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                Modern E-commerce Platform
+              </h3>
+              <p class="text-bolt-text-light mb-6">
+                A full-stack e-commerce solution built with React and Supabase,
+                featuring a Sign in, user profile, secure payments, and advanced
+                analytics.
+              </p>
+              <ul class="project-features space-y-4 mb-8">
+                <li
+                  class="flex items-center border-b border-bolt-dark-gray pb-4"
+                >
+                  <span class="text-bolt-green mr-3 text-lg">▸</span>
+                  <span class="text-bolt-text-light"
+                    >Real-time sales dashboard with analytics</span
+                  >
+                </li>
+                <li
+                  class="flex items-center border-b border-bolt-dark-gray pb-4"
+                >
+                  <span class="text-bolt-green mr-3 text-lg">▸</span>
+                  <span class="text-bolt-text-light"
+                    >Secure Stripe payment integration</span
+                  >
+                </li>
+                <li
+                  class="flex items-center border-b border-bolt-dark-gray pb-4"
+                >
+                  <span class="text-bolt-green mr-3 text-lg">▸</span>
+                  <span class="text-bolt-text-light"
+                    >Mobile-first responsive design</span
+                  >
+                </li>
+              </ul>
+              <div class="project-actions flex flex-col sm:flex-row gap-4">
+                <a href="#" class="btn btn-primary">View Case Study</a>
+                <a href="#" class="btn btn-secondary">Live Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-16 md:py-24 bg-bolt-gray">
+        <div class="container mx-auto px-4 md:px-6">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center fade-in-up"
+          >
+            <div class="about-content order-2 lg:order-1">
+              <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+              <p class="text-bolt-text-light mb-4">
+                I'm a passionate digital designer and developer with expertise
+                in creating modern web applications. My approach combines
+                technical excellence with thoughtful design to deliver
+                exceptional user experiences.
+              </p>
+              <p class="text-bolt-text-light mb-8">
+                When I'm not coding, you can find me exploring new design
+                trends, contributing to open-source projects, or experimenting
+                with emerging web technologies.
+              </p>
+              <div class="skills">
+                <h4 class="text-lg font-semibold mb-4">
+                  Technologies I Work With:
+                </h4>
+                <div class="skill-tags flex flex-wrap gap-2">
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Vue.js</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Next.js</span>
+                  <span class="skill-tag">React Native</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-image order-1 lg:order-2">
+              <div
+                class="image-container relative rounded-2xl overflow-hidden shadow-xl"
+              >
+                <img
+                  src="images/Riley Happuch.jpg"
+                  alt="Riley Happuch - Digital Designer and Developer"
+                  class="w-full h-auto"
+                  loading="lazy"
+                />
+                <div
+                  class="image-overlay absolute inset-0 bg-gradient-to-br from-bolt-green to-transparent opacity-10"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="py-16 md:py-24 bg-bolt-white text-center fade-in-up"
+      >
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="contact-content max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Ready to start your project?
+            </h2>
+            <p class="text-bolt-text-light mb-8">
+              I'm currently available for freelance projects and full-time
+              opportunities. Let's discuss how we can work together to bring
+              your ideas to life.
+            </p>
+            <a
+              href="mailto:rileyhappuch@gmail.com"
+              class="btn btn-primary btn-large"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-bolt-black text-bolt-white py-16">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="footer-content grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="footer-brand md:col-span-2">
+            <div class="logo text-xl font-black text-bolt-white mb-4">
+              RILEY HAPPUCH
+            </div>
+            <p class="text-bolt-text-light max-w-md">
+              Creating digital experiences that make an impact.
+            </p>
+          </div>
+          <div class="footer-links grid grid-cols-2 gap-8">
+            <div class="footer-column">
+              <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="#services"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >Services</a
+                >
+                <a
+                  href="#projects"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >Projects</a
+                >
+                <a
+                  href="#about"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >About</a
+                >
+                <a
+                  href="#contact"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >Contact</a
+                >
+              </div>
+            </div>
+            <div class="footer-column">
+              <h4 class="text-lg font-semibold mb-4">Connect</h4>
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="#"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >LinkedIn</a
+                >
+                <a
+                  href="https://github.com/"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >GitHub</a
+                >
+                <a
+                  href="https://x.com/home"
+                  class="text-bolt-text-light hover:text-bolt-green transition-colors"
+                  >Twitter</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="footer-bottom pt-8 border-t border-bolt-dark-gray text-center text-bolt-text-light"
+        >
+          <p>
+            &copy; <span id="current-year">2025</span> Riley Happuch. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
