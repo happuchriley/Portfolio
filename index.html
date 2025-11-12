@@ -15,38 +15,7 @@
     <title>Riley Happuch - Digital Designer & Front-End Developer</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "bolt-black": "#000000",
-              "bolt-white": "#ffffff",
-              "bolt-green": "#00d12d",
-              "bolt-blue": "#0066ff",
-              "bolt-gray": "#f5f5f5",
-              "bolt-dark-gray": "#1a1a1a",
-              "bolt-text": "#333333",
-              "bolt-text-light": "#666666",
-              "bolt-border": "rgba(0, 0, 0, 0.1)",
-            },
-            fontFamily: {
-              primary: ["Inter", "sans-serif"],
-            },
-            animation: {
-              float: "float 6s ease-in-out infinite",
-            },
-            keyframes: {
-              float: {
-                "0%, 100%": { transform: "translateY(0px)" },
-                "50%": { transform: "translateY(-20px)" },
-              },
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="dist/output.css" />
 
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,140 +33,161 @@
   </head>
   <body class="font-primary text-bolt-text bg-bolt-white">
     <header
-      class="bg-bolt-white py-4 fixed top-0 w-full z-50 border-b border-bolt-border backdrop-blur-md"
+      class="header-nav bg-bolt-white py-3 sm:py-4 fixed top-0 left-0 right-0 w-full z-50 border-b border-bolt-border backdrop-blur-md shadow-sm"
     >
       <nav
-        class="container mx-auto px-4 md:px-6 flex justify-between items-center"
+        class="container mx-auto px-4 md:px-6 flex justify-between items-center relative z-50"
       >
-        <a href="#" class="text-xl font-black text-bolt-black z-50"
+        <a
+          href="#"
+          class="text-base sm:text-lg md:text-xl font-black text-bolt-black hover:text-bolt-green transition-colors"
           >RILEY HAPPUCH</a
         >
-        <ul class="hidden md:flex items-center space-x-8">
+        <ul class="hidden md:flex items-center space-x-6 lg:space-x-8">
           <li>
             <a
               href="#hero"
-              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors text-sm lg:text-base"
               >Home</a
             >
           </li>
           <li>
             <a
               href="#services"
-              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors text-sm lg:text-base"
               >Services</a
             >
           </li>
           <li>
             <a
               href="#projects"
-              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors text-sm lg:text-base"
               >Projects</a
             >
           </li>
           <li>
             <a
               href="#about"
-              class="text-bolt-text font-medium hover:text-bolt-green transition-colors"
+              class="text-bolt-text font-medium hover:text-bolt-green transition-colors text-sm lg:text-base"
               >About</a
             >
           </li>
           <li>
             <a
               href="#contact"
-              class="ml-4 bg-bolt-black text-bolt-white px-6 py-2 rounded-full font-semibold hover:bg-bolt-green hover:-translate-y-1 transition-all duration-300"
+              class="ml-2 lg:ml-4 bg-bolt-black text-bolt-white px-4 lg:px-6 py-2 rounded-full font-semibold hover:bg-bolt-green hover:-translate-y-1 transition-all duration-300 text-sm lg:text-base"
               >Get In Touch</a
             >
           </li>
         </ul>
         <button
-          class="hamburger md:hidden flex flex-col gap-1 p-2 z-50"
+          class="hamburger md:hidden flex flex-col justify-center items-center gap-1.5 p-2 w-10 h-10 relative z-[60] focus:outline-none focus:ring-2 focus:ring-bolt-green focus:ring-offset-2 rounded-lg transition-all"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
+          type="button"
         >
-          <span class="w-6 h-0.5 bg-bolt-black"></span>
-          <span class="w-6 h-0.5 bg-bolt-black"></span>
-          <span class="w-6 h-0.5 bg-bolt-black"></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-bolt-black transition-all duration-300 ease-in-out block"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-bolt-black transition-all duration-300 ease-in-out block"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-bolt-black transition-all duration-300 ease-in-out block"
+          ></span>
         </button>
       </nav>
+    </header>
 
-      <!-- Mobile Menu -->
+    <!-- Mobile Menu Overlay -->
+    <div
+      class="mobile-menu-overlay fixed inset-0 bg-black bg-opacity-60 z-[55] opacity-0 invisible transition-all duration-300 ease-in-out pointer-events-none md:hidden"
+    ></div>
+
+    <!-- Mobile Menu -->
+    <div
+      class="mobile-menu fixed top-0 right-0 h-screen w-full max-w-xs sm:max-w-sm bg-bolt-white z-[60] flex flex-col shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-y-auto"
+    >
       <div
-        class="mobile-menu fixed inset-0 bg-bolt-white z-40 flex flex-col items-center justify-center space-y-8 transform -translate-x-full transition-transform duration-300 md:hidden"
+        class="flex flex-col items-center justify-center min-h-full px-6 py-24 space-y-4"
       >
         <a
           href="#hero"
-          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          class="mobile-menu-link text-xl sm:text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors py-3 px-4 rounded-lg hover:bg-bolt-gray w-full text-center active:bg-bolt-gray"
           >Home</a
         >
         <a
           href="#services"
-          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          class="mobile-menu-link text-xl sm:text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors py-3 px-4 rounded-lg hover:bg-bolt-gray w-full text-center active:bg-bolt-gray"
           >Services</a
         >
         <a
           href="#projects"
-          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          class="mobile-menu-link text-xl sm:text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors py-3 px-4 rounded-lg hover:bg-bolt-gray w-full text-center active:bg-bolt-gray"
           >Projects</a
         >
         <a
           href="#about"
-          class="text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors"
+          class="mobile-menu-link text-xl sm:text-2xl font-medium text-bolt-text hover:text-bolt-green transition-colors py-3 px-4 rounded-lg hover:bg-bolt-gray w-full text-center active:bg-bolt-gray"
           >About</a
         >
         <a
           href="#contact"
-          class="bg-bolt-black text-bolt-white px-8 py-3 rounded-full font-semibold hover:bg-bolt-green transition-colors"
+          class="mobile-menu-link mt-2 bg-bolt-black text-bolt-white px-8 py-3 rounded-full font-semibold hover:bg-bolt-green transition-all duration-300 text-base sm:text-lg w-full text-center active:bg-bolt-green"
           >Get In Touch</a
         >
       </div>
-    </header>
+    </div>
 
     <main>
       <!-- Hero Section -->
       <section
         id="hero"
-        class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-bolt-white to-bolt-gray"
+        class="hero-section min-h-screen flex items-center justify-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 bg-gradient-to-br from-bolt-white to-bolt-gray overflow-hidden"
       >
-        <div class="container mx-auto px-4 md:px-6">
+        <div
+          class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl w-full"
+        >
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center"
           >
-            <div class="text-center md:text-left">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Digital Designer &<br />
-                <span class="text-bolt-green">Front-End Developer</span>
+            <!-- Hero Content -->
+            <div
+              class="hero-content text-center lg:text-left order-2 lg:order-1"
+            >
+              <h1
+                class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight"
+              >
+                Digital Designer &<br class="hidden sm:block" />
+                <span class="text-bolt-green block sm:inline"
+                  >Front-End Developer</span
+                >
               </h1>
               <p
-                class="text-lg md:text-xl text-bolt-text-light mb-8 leading-relaxed"
+                class="hero-description text-base sm:text-lg md:text-xl lg:text-2xl text-bolt-text-light mb-6 sm:mb-7 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
               >
                 I create modern, high-performance web experiences that combine
                 cutting-edge design with robust engineering. Specializing in
                 React, TypeScript, and scalable front-end architecture.
               </p>
               <div
-                class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8"
+                class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6"
               >
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a
+                  href="#projects"
+                  class="btn btn-primary text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3"
+                  >View My Work</a
+                >
                 <a
                   href="assets/docs/resume.pdf"
                   download
-                  class="btn btn-secondary"
+                  class="btn btn-secondary text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3"
                   >Download CV</a
                 >
               </div>
             </div>
-            <div class="relative h-80 flex items-center justify-center">
-              <div class="relative w-72 h-72">
-                <div
-                  class="absolute w-48 h-48 bg-bolt-green opacity-10 rounded-xl top-0 left-0 animate-float"
-                ></div>
-                <div
-                  class="absolute w-36 h-36 bg-bolt-green opacity-10 rounded-xl bottom-0 right-0 animate-float animate-delay-2s"
-                ></div>
-                <div
-                  class="absolute w-24 h-24 bg-bolt-green opacity-10 rounded-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-float animate-delay-4s"
-                ></div>
-              </div>
+
+           
             </div>
           </div>
         </div>
