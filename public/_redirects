@@ -1,0 +1,4 @@
+# Netlify & Cloudflare Pages: send all non-file routes to the SPA shell so
+# React Router (and client-side 404) work on refresh and deep links.
+# Static assets under /static/ and other files are still served when they exist.
+/*    /index.html   200

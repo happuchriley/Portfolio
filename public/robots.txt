@@ -1,0 +1,5 @@
+# Allow all crawlers. After deployment, add your sitemap URL, e.g.:
+# Sitemap: https://your-domain.com/sitemap.xml
+
+User-agent: *
+Allow: /

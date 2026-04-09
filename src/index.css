@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #main-content:focus-visible {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 4px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: 'Work Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    @apply bg-background text-foreground antialiased dark:bg-black dark:text-gray-300 overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .navbar.navbar-scrolled {
+    @apply bg-dark dark:bg-black border-b border-dark/10 dark:border-white/10;
+  }
+
+  .btn {
+    @apply font-semibold transition-all duration-500 rounded-full;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  /* Decorative lines: hidden on small screens to avoid overflow / horizontal scroll */
+  .title-center h5::before,
+  .title-center h5::after,
+  .title-center > p:first-of-type::before,
+  .title-center > p:first-of-type::after {
+    @apply hidden sm:block absolute content-[''] h-0 top-[9px] border-b border-dark/20 dark:border-white/20 w-[min(12rem,45vw)] md:w-[min(18rem,35vw)] lg:w-[min(24rem,28vw)];
+  }
+  
+  .title-center h5::before,
+  .title-center > p:first-of-type::before {
+    @apply right-[calc(100%+10px)] md:right-[calc(100%+15px)];
+  }
+  
+  .title-center h5::after,
+  .title-center > p:first-of-type::after {
+    @apply left-[calc(100%+10px)] md:left-[calc(100%+15px)];
+  }
+  
+  .title-center h2 {
+    @apply border-b border-dark/20 dark:border-white/20;
+  }
+
+  .hero-title-center h5::before,
+  .hero-title-center h5::after,
+  .hero-title-center > p:first-of-type::before,
+  .hero-title-center > p:first-of-type::after {
+    @apply border-b border-white/30;
+  }
+
+  .service-item-left {
+    @apply rounded-2xl md:rounded-none md:rounded-l-[500px] bg-secondary dark:bg-dark border border-dark/10 dark:border-white/10 md:border-y md:border-l md:border-r-0;
+  }
+
+  .service-item-right {
+    @apply rounded-2xl md:rounded-none md:rounded-r-[500px] bg-secondary dark:bg-dark border border-dark/10 dark:border-white/10 md:border-y md:border-r md:border-l-0;
+  }
+  
+  .team-item {
+    @apply relative;
+  }
+  
+  .team-body {
+    @apply relative overflow-hidden;
+  }
+  
+  .team-before,
+  .team-after {
+    @apply absolute w-0 h-[calc(100%-88px)] top-0 left-0 bg-black/70 flex flex-col justify-center transition-all duration-500 overflow-y-auto overflow-x-hidden;
+  }
+  
+  .team-after {
+    @apply left-auto right-0;
+  }
+  
+  .team-before {
+    @apply text-right;
+  }
+  
+  .team-before span,
+  .team-after span {
+    @apply my-0.5 sm:my-1 px-0.5 sm:px-1 text-white opacity-0 transition-all duration-500 text-[0.65rem] leading-snug min-[400px]:text-xs md:text-sm break-words;
+  }
+
+  /* Hover-only reveal (real pointers); avoids tap-to-sticky “hover” on touch */
+  @media (hover: hover) {
+    .team-item:hover .team-before,
+    .team-item:hover .team-after {
+      @apply w-1/2;
+    }
+
+    .team-item:hover .team-before span,
+    .team-item:hover .team-after span {
+      @apply opacity-100;
+      transition-delay: 0.2s;
+    }
+  }
+
+  @media (hover: hover) and (max-width: 399px) {
+    .team-item:hover .team-before,
+    .team-item:hover .team-after {
+      width: 48%;
+    }
+  }
+
+  /* Hidden when hover is available (tech shows on card hover instead) */
+  .portfolio-tech-below {
+    @apply hidden;
+  }
+
+  /* Touch / no hover: tech list under image; side overlays disabled */
+  @media (hover: none) {
+    .team-before,
+    .team-after {
+      display: none;
+    }
+
+    .team-item {
+      @apply pb-[5.75rem];
+    }
+
+    .portfolio-tech-below {
+      @apply mt-3 flex flex-wrap list-none justify-center gap-2 px-1;
+    }
+
+    .portfolio-tech-below-pill {
+      @apply inline-block rounded-full border border-dark/10 bg-background px-2.5 py-1 text-xs text-foreground shadow-sm dark:border-white/15 dark:bg-dark dark:text-gray-200;
+    }
+  }
+  
+  .team-footer {
+    @apply absolute w-full min-h-[88px] left-0 bottom-0 flex flex-col items-center justify-center gap-1.5 sm:gap-2 bg-black/70 px-1.5 sm:px-2 py-2 sm:py-2.5 z-[2];
+  }
+
+  .team-footer-title {
+    @apply flex items-center justify-center text-center max-w-full px-1;
+  }
+
+  .team-footer-title h3 {
+    @apply text-[0.8rem] min-[400px]:text-sm sm:text-base md:text-lg font-bold uppercase mb-0 text-white leading-tight line-clamp-2;
+  }
+
+  .team-footer-actions {
+    @apply flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-full;
+  }
+
+  .team-footer-actions a {
+    @apply inline-flex min-h-[32px] sm:min-h-[36px] items-center justify-center rounded-full border border-white/35 bg-white/10 px-2 sm:px-3 py-1 sm:py-1.5 text-[0.65rem] min-[400px]:text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+  }
+  
+  .back-to-top {
+    @apply fixed hidden right-4 bottom-4 sm:right-[45px] sm:bottom-[45px] z-[99] min-h-[48px] min-w-[48px];
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    padding-right: env(safe-area-inset-right, 0);
+  }
+  
+  .spinner-size {
+    @apply w-12 h-12;
+  }
+  
+  .contact-message {
+    @apply min-h-[120px] sm:min-h-[150px];
+  }
+  
+  .btn-lg-square {
+    @apply w-[60px] h-[60px] flex items-center justify-center text-2xl;
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-[200%] rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-lg transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-dark dark:focus:ring-white focus:ring-offset-2 focus:ring-offset-background dark:focus:ring-offset-black;
+  }
+
+  .font-josefin {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .page-header {
+    background-size: cover;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
