@@ -1,5 +1,4 @@
 import React from "react";
-import CvDownloadLink from "./CvDownloadLink";
 
 const About = () => {
   const scrollToSection = (e, sectionId) => {
@@ -69,7 +68,7 @@ const About = () => {
               </li>
             </ul>
             <div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 wow fadeInUp"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 wow fadeInUp"
               data-wow-delay="0.4s"
             >
               <a
@@ -79,12 +78,6 @@ const About = () => {
               >
                 View Portfolio
               </a>
-              <CvDownloadLink
-                showIcon={false}
-                className="btn btn-outline-primary border-2 py-3 w-full text-center inline-flex items-center justify-center gap-2"
-              >
-                Download CV
-              </CvDownloadLink>
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "contact")}

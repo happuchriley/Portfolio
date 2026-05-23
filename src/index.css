@@ -193,6 +193,52 @@
   .btn-lg-square {
     @apply w-[60px] h-[60px] flex items-center justify-center text-2xl;
   }
+
+  .footer-with-tech-strip {
+    @apply relative overflow-hidden bg-dark dark:bg-black;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .footer-with-tech-strip::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-dark/75 via-dark/65 to-dark/80 dark:from-black/75 dark:via-black/70 dark:to-black/80;
+  }
+
+  .footer-tech-strip {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[5.5rem] sm:h-[7rem];
+  }
+
+  .footer-tech-strip-track {
+    @apply flex h-full w-max items-end gap-10 sm:gap-14 px-6;
+    animation: footer-tech-marquee 45s linear infinite;
+  }
+
+  .footer-tech-icon {
+    @apply inline-flex shrink-0 items-end leading-none text-white/90;
+    filter: drop-shadow(0 0 12px rgba(255, 62, 0, 0.35));
+  }
+
+  .footer-tech-icon:nth-child(3n) {
+    @apply text-primary/80;
+  }
+
+  @keyframes footer-tech-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer-tech-strip-track {
+      animation: none;
+      @apply w-full justify-around;
+    }
+  }
 }
 
 @layer utilities {

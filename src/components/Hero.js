@@ -51,22 +51,22 @@ const Hero = () => {
           >
             <img
               src={slide.image}
-              alt={`${slide.subtitle} — modern web interfaces and responsive design`}
+              alt={`${slide.subtitle} — frontend development and UI implementation`}
               className="w-full h-full object-cover object-center"
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
               fetchpriority={index === 0 ? 'high' : 'low'}
             />
-            <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center text-center px-3 min-[400px]:px-5 sm:px-6 md:px-8 pt-[max(6.5rem,env(safe-area-inset-top,0px)+4.5rem)] pb-[max(5.5rem,env(safe-area-inset-bottom,0px)+1.25rem)] sm:pt-24 sm:pb-20">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/70 to-black/80 flex flex-col items-center justify-center text-center px-3 min-[400px]:px-5 sm:px-6 md:px-8 pt-[max(6.5rem,env(safe-area-inset-top,0px)+4.5rem)] pb-[max(5.5rem,env(safe-area-inset-bottom,0px)+1.25rem)] sm:pt-24 sm:pb-20">
               <div className="title mx-auto max-w-4xl w-full px-1 min-[400px]:px-2 sm:px-5 animate-slideInDown">
                 <div className="title-center hero-title-center">
-                  <p className="text-sm min-[400px]:text-base sm:text-lg font-light mb-2 text-white/95">{slide.title}</p>
-                  <h1 className="text-[clamp(1.5rem,5.5vw+0.85rem,6rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold uppercase mb-3 sm:mb-4 leading-[1.1] tracking-tight text-white border-b border-white/30 pb-2">
+                  <p className="text-sm min-[400px]:text-base sm:text-lg font-light mb-2 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">{slide.title}</p>
+                  <h1 className="text-[clamp(1.5rem,5.5vw+0.85rem,6rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold uppercase mb-3 sm:mb-4 leading-[1.1] tracking-tight text-white border-b border-white/30 pb-2 drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
                     {slide.subtitle}
                   </h1>
                 </div>
               </div>
-              <p className="text-sm min-[400px]:text-base sm:text-lg md:text-xl mb-6 sm:mb-8 animate-slideInDown whitespace-pre-line max-w-2xl text-white/90 px-1 leading-relaxed">
+              <p className="text-sm min-[400px]:text-base sm:text-lg md:text-xl mb-6 sm:mb-8 animate-slideInDown whitespace-pre-line max-w-2xl text-white px-1 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
                 {slide.description}
               </p>
               <div className="flex flex-col min-[480px]:flex-row flex-wrap items-stretch min-[480px]:items-center justify-center gap-3 sm:gap-4 w-full max-w-md min-[480px]:max-w-none mx-auto animate-slideInDown px-1">
