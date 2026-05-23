@@ -1,0 +1,75 @@
+{
+  "name": "Derrick Teye",
+  "brand": "THE MISFITS",
+  "title": "Frontend Developer",
+  "email": "rileyhappuch@gmail.com",
+  "phone": "+233 54 689 6286",
+  "location": "Ghana · Available for remote work",
+  "portfolio": "https://the-misfits.netlify.app/",
+  "github": "https://github.com/happuchriley/Portfolio",
+  "summary": "Frontend Developer with 3+ years of experience building modern, responsive web applications. I specialize in React, JavaScript, and polished UI/UX — from e-commerce storefronts and dashboards to portfolio and social products. I focus on performance, accessibility, and clean, maintainable code.",
+  "highlights": [
+    "3+ years professional frontend development",
+    "React, JavaScript, TypeScript, and modern CSS",
+    "Responsive, mobile-first interfaces",
+    "E-commerce, dashboards, and content-driven apps"
+  ],
+  "skills": {
+    "Core": ["JavaScript", "TypeScript", "HTML5", "CSS3", "React", "Next.js", "Vue.js"],
+    "UI & styling": ["Tailwind CSS", "Responsive design", "Component architecture", "Accessibility"],
+    "Backend & data": ["REST APIs", "GraphQL", "Supabase", "Firebase", "PostgreSQL"],
+    "Tools": ["Git", "Netlify", "Webpack", "Chart.js", "Styled Components", "Material UI"]
+  },
+  "experience": [
+    {
+      "role": "Frontend Developer",
+      "company": "Freelance · THE MISFITS",
+      "period": "2021 – Present",
+      "bullets": [
+        "Design and build responsive web apps for clients across e-commerce, education, and enterprise sectors.",
+        "Deliver React and Vue.js frontends with secure auth, real-time data, and optimized Core Web Vitals.",
+        "Collaborate on UI/UX, translate Figma-style requirements into accessible, production-ready interfaces.",
+        "Ship and maintain projects on Netlify with CI-friendly workflows and documented handoffs."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "The Misfits Shop",
+      "url": "https://themisfits.netlify.app/",
+      "stack": "React, TypeScript, Supabase, Styled Components",
+      "description": "E-commerce storefront with product browsing, cart flow, and brand-forward UI."
+    },
+    {
+      "name": "Gloss Girlies",
+      "url": "https://glossgirlies.netlify.app/",
+      "stack": "Vue.js, Tailwind CSS, Supabase, Vuex",
+      "description": "Beauty e-commerce site with category navigation, search, and checkout experience."
+    },
+    {
+      "name": "School Management System — Skuul",
+      "url": "https://sku-ul.netlify.app/",
+      "stack": "Next.js, React, GraphQL, Stripe",
+      "description": "Admin dashboard for students, staff, billing, and school operations."
+    },
+    {
+      "name": "Enterprise Audit Suite",
+      "url": "https://audit-software.netlify.app/",
+      "stack": "React, Firebase, Material UI, Chart.js",
+      "description": "Audit workspace with workpapers, risk summaries, and partner reporting."
+    },
+    {
+      "name": "Farm-Flux",
+      "url": "https://farm-flux.netlify.app/",
+      "stack": "React, Next.js, PostgreSQL, Tailwind CSS",
+      "description": "Social platform for farmers — feeds, profiles, and community features."
+    }
+  ],
+  "education": [
+    {
+      "credential": "Continuous professional development",
+      "institution": "Modern web technologies & frontend engineering",
+      "period": "Ongoing"
+    }
+  ]
+}

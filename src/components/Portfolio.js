@@ -19,7 +19,8 @@ const Portfolio = () => {
   const projects = [
     {
       title: "The Misfits Shop",
-      image: "/img/team-1.jpg",
+      image: "/img/misfits-shop.jpg",
+      imageClass: "object-cover object-top",
       technologies: [
         "React",
         "TypeScript",
@@ -31,7 +32,8 @@ const Portfolio = () => {
     },
     {
       title: "Gloss Girlies",
-      image: "/img/team-2.jpg",
+      image: "/img/gloss-girlies.jpg",
+      imageClass: "object-cover object-top",
       technologies: [
         "Vue.js",
         "JavaScript",
@@ -44,26 +46,29 @@ const Portfolio = () => {
     },
     {
       title: "School Management System-Skuul",
-      image: "/img/team-3.jpg",
+      image: "/img/skuul.jpg",
+      imageClass: "object-cover object-top",
       technologies: ["Next.js", "React", "GraphQL", "SCSS", "Stripe", "Docker"],
       link: "https://sku-ul.netlify.app/",
     },
     {
       title: "The Misfits-Portfolio",
-      image: "/img/team-4.jpg",
+      image: "/img/misfits-portfolio.jpg",
+      imageClass: "object-cover object-top",
       technologies: [
-        "Angular",
-        "TypeScript",
-        "RxJS",
-        "Material UI",
-        "NgRx",
-        "Jest",
+        "React",
+        "Tailwind CSS",
+        "JavaScript",
+        "React Router",
+        "WOW.js",
+        "Netlify",
       ],
       link: "https://the-misfits.netlify.app/",
     },
     {
       title: "Audit Software",
-      image: "/img/team-5.jpg",
+      image: "/img/audit-software.jpg",
+      imageClass: "object-cover object-top",
       technologies: [
         "React",
         "Firebase",
@@ -76,14 +81,15 @@ const Portfolio = () => {
     },
     {
       title: "Farm-Flux",
-      image: "/img/team-6.jpg",
+      image: "/img/farm-flux.jpg",
+      imageClass: "object-cover object-center",
       technologies: [
         "React",
-        "Tailwind",
-        "JavaScript",
-        "GSAP",
         "Next.js",
         "PostgreSQL",
+        "Tailwind CSS",
+        "Real-time feeds",
+        "Auth",
       ],
       link: "https://farm-flux.netlify.app/",
     },
@@ -130,7 +136,7 @@ const Portfolio = () => {
                   <img
                     src={project.image}
                     alt={`${project.title} project preview`}
-                    className="w-full h-auto aspect-[4/3] object-cover pointer-events-none"
+                    className={`block w-full aspect-[4/3] pointer-events-none ${project.imageClass ?? "object-cover"}`}
                     loading="lazy"
                     decoding="async"
                   />

@@ -9,13 +9,13 @@ const Testimonials = () => {
       image: "/img/testimonial-1.jpg"
     },
     {
-      text: "THE MISFITS transformed our outdated website into a modern, responsive masterpiece. Their expertise in frontend development and UI/UX design helped us increase our conversion rate by 40%. The project was completed on time and within budget.",
+      text: "THE MISFITS transformed our outdated website into a modern, responsive masterpiece. Their expertise as a Frontend Developer and in UI/UX design helped us increase our conversion rate by 40%. The project was completed on time and within budget.",
       name: "Michael Chen",
       role: "Product Manager, Digital Solutions",
       image: "/img/testimonial-2.jpg"
     },
     {
-      text: "I've worked with many developers, but THE MISFITS stands out for their technical skills and professionalism. They built a complex Vue.js application with clean code and excellent documentation. Will definitely work with them again!",
+      text: "I've worked with many Frontend Developers, but THE MISFITS stands out for their technical skills and professionalism. They built a complex React application with clean code and excellent documentation. Will definitely work with them again!",
       name: "Emily Rodriguez",
       role: "Founder, Creative Agency",
       image: "/img/testimonial-3.jpg"
@@ -96,8 +96,9 @@ const Testimonials = () => {
                 >
                   <img
                     src={testimonial.image}
-                    alt=""
-                    className="w-full h-full object-cover"
+                    alt={`${testimonial.name}, ${testimonial.role}`}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
                     decoding="async"
                   />
                 </button>

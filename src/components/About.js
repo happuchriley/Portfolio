@@ -1,4 +1,5 @@
 import React from "react";
+import CvDownloadLink from "./CvDownloadLink";
 
 const About = () => {
   const scrollToSection = (e, sectionId) => {
@@ -27,7 +28,7 @@ const About = () => {
                   id="about-heading"
                   className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-dark dark:text-white border-b border-dark/20 dark:border-white/20 pb-2"
                 >
-                  Software Developer
+                  Frontend Developer
                 </h2>
               </div>
             </div>
@@ -35,10 +36,10 @@ const About = () => {
               className="mb-6 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
               data-wow-delay="0.2s"
             >
-              I'm a passionate software developer with over 3+ years of
+              I'm a passionate Frontend Developer with over 3+ years of
               experience creating modern, responsive web applications. I
               specialize in building user-friendly interfaces using React,
-              Vue.js, and vanilla JavaScript. My goal is to create seamless user
+              JavaScript, and modern CSS. My goal is to create seamless user
               experiences that are both beautiful and functional.
             </p>
             <ul
@@ -57,7 +58,7 @@ const About = () => {
                   className="fa fa-check-circle text-primary mr-2"
                   aria-hidden="true"
                 ></i>
-                Expert in React, Vue.js & JavaScript
+                Expert in React, JavaScript & responsive UI
               </li>
               <li className="flex items-center text-foreground dark:text-gray-300">
                 <i
@@ -68,7 +69,7 @@ const About = () => {
               </li>
             </ul>
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 wow fadeInUp"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 wow fadeInUp"
               data-wow-delay="0.4s"
             >
               <a
@@ -78,6 +79,12 @@ const About = () => {
               >
                 View Portfolio
               </a>
+              <CvDownloadLink
+                showIcon={false}
+                className="btn btn-outline-primary border-2 py-3 w-full text-center inline-flex items-center justify-center gap-2"
+              >
+                Download CV
+              </CvDownloadLink>
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "contact")}
@@ -88,16 +95,30 @@ const About = () => {
             </div>
           </div>
           <div
-            className="w-full min-w-0 lg:w-5/12 wow fadeInUp"
+            className="w-full min-w-0 lg:w-5/12 wow fadeInUp px-4 sm:px-6 lg:px-2 py-6 sm:py-8"
             data-wow-delay="0.5s"
           >
-            <img
-              src="/img/about.png"
-              alt="DERRICK TEYE, frontend developer"
-              className="w-full max-w-md mx-auto lg:max-w-none h-auto rounded-lg lg:rounded-none"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="relative mx-auto max-w-md lg:max-w-none pt-6 pr-6 pb-10 pl-10 sm:pt-8 sm:pr-8 sm:pb-12 sm:pl-14">
+              <div
+                className="pointer-events-none absolute left-0 top-0 h-[72%] w-[78%] rounded-2xl border-2 border-primary/50 bg-primary/10 dark:bg-primary/15"
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute bottom-2 right-0 h-16 w-16 sm:h-20 sm:w-20 border-b-[3px] border-r-[3px] border-primary rounded-br-2xl"
+                aria-hidden="true"
+              />
+              <div className="relative rounded-2xl border-2 border-primary/80 bg-background p-4 sm:p-5 lg:p-6 shadow-lg shadow-primary/10 dark:bg-black/40 dark:shadow-black/50">
+                <div className="overflow-hidden rounded-xl ring-1 ring-black/5 dark:ring-white/10">
+                  <img
+                    src="/img/about.png"
+                    alt="Derrick Teye, Frontend Developer"
+                    className="w-full aspect-[3/4] max-h-[min(70vh,520px)] object-cover object-top"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

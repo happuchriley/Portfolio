@@ -1,4 +1,5 @@
 import React from 'react';
+import CvDownloadLink from './CvDownloadLink';
 
 const CTA = () => {
   const scrollToSection = (e, sectionId) => {
@@ -39,6 +40,12 @@ const CTA = () => {
               >
                 Get In Touch
               </a>
+              <CvDownloadLink
+                className="btn btn-outline-primary border-2 py-3 px-8 min-h-[48px] inline-flex items-center justify-center gap-2"
+                showIcon={false}
+              >
+                Download CV
+              </CvDownloadLink>
               <a
                 href="#portfolio"
                 onClick={(e) => scrollToSection(e, 'portfolio')}

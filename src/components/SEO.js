@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const DEFAULT_DESCRIPTION =
-  'THE MISFITS — frontend developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations.';
+  'THE MISFITS — Frontend Developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations.';
 
 export default function SEO({
   title,

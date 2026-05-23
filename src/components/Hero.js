@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-
-const CV_PDF = '/Riley-Happuch-CV.pdf';
+import CvDownloadLink from './CvDownloadLink';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,13 +7,13 @@ const Hero = () => {
     {
       image: '/img/carousel-1.jpg',
       title: "Hello, I'm Derrick Teye",
-      subtitle: 'Software Developer',
+      subtitle: 'Frontend Developer',
       description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
     },
     {
       image: '/img/carousel-2.jpg',
       title: "Hello, I'm Derrick Teye",
-      subtitle: 'Software Developer',
+      subtitle: 'Frontend Developer',
       description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
     }
   ], []);
@@ -52,7 +51,7 @@ const Hero = () => {
           >
             <img
               src={slide.image}
-              alt={`${slide.title} ${slide.subtitle} — portfolio`}
+              alt={`${slide.subtitle} — modern web interfaces and responsive design`}
               className="w-full h-full object-cover object-center"
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
@@ -78,16 +77,9 @@ const Hero = () => {
                 >
                   View My Work
                 </a>
-                <a
-                  href={CV_PDF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary py-3 px-6 sm:px-8 min-h-[48px] inline-flex items-center justify-center gap-2"
-                  aria-label="Download CV (opens in a new tab to preview)"
-                >
-                  <i className="fas fa-download" aria-hidden="true"></i>
+                <CvDownloadLink className="btn btn-primary py-3 px-6 sm:px-8 min-h-[48px] inline-flex items-center justify-center gap-2">
                   Download CV
-                </a>
+                </CvDownloadLink>
               </div>
             </div>
           </div>

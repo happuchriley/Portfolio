@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import CvDownloadLink from './CvDownloadLink';
 
 const EMAIL = 'rileyhappuch@gmail.com';
 const PHONE_DISPLAY = '054 689 6286';
@@ -159,6 +160,21 @@ const Contact = () => {
                 <div className="min-w-0 pt-1">
                   <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Location</h4>
                   <p className="mb-0 text-foreground dark:text-gray-300">Available for Remote Work</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="btn-lg-square bg-primary rounded-full shrink-0 flex items-center justify-center min-h-[52px] min-w-[52px] sm:min-h-[60px] sm:min-w-[60px]" aria-hidden="true">
+                  <i className="fas fa-file-pdf text-white"></i>
+                </div>
+                <div className="min-w-0 pt-1">
+                  <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Résumé</h4>
+                  <CvDownloadLink
+                    showIcon={false}
+                    className="mb-0 text-foreground dark:text-gray-300 hover:text-primary transition-colors inline-flex items-center gap-2"
+                  >
+                    Download CV (PDF)
+                  </CvDownloadLink>
                 </div>
               </div>
 

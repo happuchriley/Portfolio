@@ -1,20 +1,23 @@
 import React from 'react';
 
+/** Service photos: Unsplash & Pexels (free license). Stored in /public/img/services/. */
 const services = [
   {
     title: 'Web Development',
     description:
       'Crafting responsive and dynamic websites using the latest technologies and best practices. Specializing in turning ideas into functional and user-friendly digital experiences.',
     tags: ['HTML', 'CSS', 'JavaScript', 'React'],
-    image: '/img/service-1.jpg',
+    image: '/img/services/web-development.jpg',
+    imageAlt: 'Laptop with code — web development workspace',
     align: 'left',
   },
   {
     title: 'Front-end Development',
     description:
       'Creating the user interface and experience by implementing HTML, CSS, and JavaScript. Focusing on visually appealing, interactive websites that engage users.',
-    tags: ['React', 'Vue', 'TypeScript', 'UI'],
-    image: '/img/service-2.jpg',
+    tags: ['React', 'TypeScript', 'UI', 'Components'],
+    image: '/img/services/frontend-development.jpg',
+    imageAlt: 'Modern website UI on desktop, tablet, and phone — front-end development',
     align: 'right',
   },
   {
@@ -22,7 +25,8 @@ const services = [
     description:
       'Designing websites that adapt seamlessly to various screen sizes and devices. Prioritizing a consistent, enjoyable experience across desktops, tablets, and smartphones.',
     tags: ['CSS Grid', 'Flexbox', 'Tailwind', 'Mobile-first'],
-    image: '/img/service-3.jpg',
+    image: '/img/services/responsive-design.jpg',
+    imageAlt: 'Responsive layout on tablet and mobile devices',
     align: 'left',
   },
   {
@@ -30,7 +34,8 @@ const services = [
     description:
       'Building online stores with secure payment flows, inventory considerations, and user-friendly interfaces—platforms that support sales and a smooth shopping experience.',
     tags: ['Stripe', 'REST APIs', 'Checkout UX', 'Carts'],
-    image: '/img/service-4.jpg',
+    image: '/img/services/ecommerce.jpg',
+    imageAlt: 'Online store checkout on laptop with payment card — e-commerce',
     align: 'right',
   },
   {
@@ -38,7 +43,8 @@ const services = [
     description:
       'Ongoing updates, fixes, and care so your site stays secure, functional, and current. Keeping everything running smoothly as your needs evolve.',
     tags: ['Hosting', 'Updates', 'Security', 'Monitoring'],
-    image: '/img/service-1.jpg',
+    image: '/img/services/maintenance.jpg',
+    imageAlt: 'Team collaborating on website maintenance and support',
     align: 'left',
   },
   {
@@ -46,7 +52,8 @@ const services = [
     description:
       'Improving speed and efficiency through code tuning, asset optimization, and solid architecture—faster experiences for users and stronger technical SEO signals.',
     tags: ['Core Web Vitals', 'Caching', 'Bundling', 'Lazy loading'],
-    image: '/img/service-2.jpg',
+    image: '/img/services/performance.jpg',
+    imageAlt: 'Analytics dashboard for web performance metrics',
     align: 'right',
   },
   {
@@ -54,7 +61,8 @@ const services = [
     description:
       'Applying SEO best practices to improve visibility and rankings: semantic structure, meta content, performance, and technical foundations search engines reward.',
     tags: ['Meta tags', 'Schema', 'Analytics', 'Accessibility'],
-    image: '/img/service-3.jpg',
+    image: '/img/services/seo.jpg',
+    imageAlt: 'SEO and digital marketing strategy on laptop',
     align: 'left',
   },
 ];
@@ -100,8 +108,8 @@ const Services = () => {
                 <div className="relative inline-block w-full">
                   <img
                     src={item.image}
-                    alt={item.title}
-                    className="w-full h-auto rounded-full"
+                    alt={item.imageAlt || item.title}
+                    className="w-full aspect-[3/2] object-cover rounded-full"
                     loading="lazy"
                     decoding="async"
                   />
