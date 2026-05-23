@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { initFaviconListener } from '../utils/favicon';
 
 const ThemeContext = createContext({
   theme: 'dark',
@@ -21,6 +22,8 @@ function getInitialTheme() {
 
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(getInitialTheme);
+
+  useEffect(() => initFaviconListener(), []);
 
   useEffect(() => {
     const root = document.documentElement;

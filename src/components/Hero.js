@@ -7,14 +7,14 @@ const Hero = () => {
   const slides = useMemo(() => [
     {
       image: '/img/carousel-1.jpg',
-      title: "Hello, I'm",
-      subtitle: 'Frontend Developer',
+      title: "Hello, I'm Derrick Teye",
+      subtitle: 'Software Developer',
       description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
     },
     {
       image: '/img/carousel-2.jpg',
-      title: "Hello, I'm",
-      subtitle: 'Frontend Developer',
+      title: "Hello, I'm Derrick Teye",
+      subtitle: 'Software Developer',
       description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
     }
   ], []);
@@ -58,7 +58,7 @@ const Hero = () => {
               decoding="async"
               fetchpriority={index === 0 ? 'high' : 'low'}
             />
-            <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-3 min-[400px]:px-5 sm:px-6 md:px-8 pt-[max(6.5rem,env(safe-area-inset-top,0px)+4.5rem)] pb-[max(5.5rem,env(safe-area-inset-bottom,0px)+1.25rem)] sm:pt-24 sm:pb-20">
+            <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center text-center px-3 min-[400px]:px-5 sm:px-6 md:px-8 pt-[max(6.5rem,env(safe-area-inset-top,0px)+4.5rem)] pb-[max(5.5rem,env(safe-area-inset-bottom,0px)+1.25rem)] sm:pt-24 sm:pb-20">
               <div className="title mx-auto max-w-4xl w-full px-1 min-[400px]:px-2 sm:px-5 animate-slideInDown">
                 <div className="title-center hero-title-center">
                   <p className="text-sm min-[400px]:text-base sm:text-lg font-light mb-2 text-white/95">{slide.title}</p>

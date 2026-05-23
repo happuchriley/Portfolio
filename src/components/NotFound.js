@@ -13,7 +13,7 @@ const NotFound = () => {
     <div className="min-h-dvh flex flex-col overflow-x-hidden bg-background dark:bg-black">
       <SEO
         title="Page not found"
-        description="The page you requested could not be found. Return to the Riley Happuch portfolio homepage."
+        description="The page you requested could not be found. Return to THE MISFITS portfolio homepage."
         path={pathname}
         noindex
       />

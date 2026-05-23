@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
 const DEFAULT_DESCRIPTION =
-  'Riley Happuch — frontend developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations.';
+  'THE MISFITS — frontend developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations.';
 
 export default function SEO({
   title,
   description = DEFAULT_DESCRIPTION,
   path = '/',
   noindex = false,
-  imagePath = '/img/about.png',
+  imagePath = '/img/the-misfits-logo.png',
 }) {
   const base = (
     process.env.REACT_APP_SITE_URL?.replace(/\/$/, '') ||
@@ -19,7 +19,7 @@ export default function SEO({
   const image =
     base && imagePath ? `${base}${imagePath.startsWith('/') ? imagePath : `/${imagePath}`}` : '';
 
-  const fullTitle = title ? `${title} | Riley Happuch` : 'Riley Happuch — Frontend Developer Portfolio';
+  const fullTitle = title ? `${title} | THE MISFITS` : 'THE MISFITS — Frontend Developer Portfolio';
 
   return (
     <Helmet htmlAttributes={{ lang: 'en' }} prioritizeSeoTags>

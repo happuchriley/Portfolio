@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl text-center px-3 sm:px-4">
         <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="inline-block min-h-[44px] max-w-full">
           <p className="text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 sm:mb-6 text-white uppercase font-josefin font-bold leading-tight break-words px-1">
-            <i className="fas fa-code mr-1 sm:mr-2" aria-hidden="true"></i>Riley Happuch
+            <i className="fas fa-code mr-1 sm:mr-2" aria-hidden="true"></i>THE MISFITS
           </p>
         </a>
         <div className="flex flex-wrap justify-center mb-8 gap-2 sm:gap-3">
@@ -62,7 +62,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="mb-2 text-sm sm:text-base px-2 break-words text-white/95">
-          &copy; <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="border-b border-white/40 hover:text-primary transition-colors">Riley Happuch</a>, All Right Reserved.
+          &copy; <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="border-b border-white/40 hover:text-primary transition-colors">THE MISFITS</a>, All Right Reserved.
         </p>
         <p className="mb-0 text-sm sm:text-base text-white/80">Frontend Developer &amp; UI/UX Enthusiast</p>
       </div>

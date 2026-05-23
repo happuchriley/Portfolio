@@ -97,7 +97,7 @@ const Navbar = () => {
           >
             <h2 className="mb-0 flex min-w-0 items-center gap-1 text-primary uppercase font-josefin text-base min-[400px]:text-lg sm:text-xl md:text-2xl leading-tight">
               <i className="fas fa-code shrink-0" aria-hidden="true"></i>
-              <span className="truncate">Riley Happuch</span>
+              <span className="truncate">THE MISFITS</span>
             </h2>
           </a>
 

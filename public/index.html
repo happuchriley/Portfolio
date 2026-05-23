@@ -2,55 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <!-- Default: white icon (dark). OS light mode uses black icon via script + media fallbacks. -->
+    <link rel="icon" type="image/png" sizes="16x16" id="app-favicon-16" href="%PUBLIC_URL%/favicon-16x16-dark.png" />
+    <link rel="icon" type="image/png" sizes="32x32" id="app-favicon-32" href="%PUBLIC_URL%/favicon-32x32-dark.png" />
+    <link rel="icon" type="image/png" sizes="64x64" id="app-favicon-64" href="%PUBLIC_URL%/favicon-64x64-dark.png" />
+    <link rel="icon" type="image/png" id="app-favicon" href="%PUBLIC_URL%/favicon-dark.png" />
+    <link rel="apple-touch-icon" id="app-apple-icon" href="%PUBLIC_URL%/apple-touch-icon-dark.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" media="(prefers-color-scheme: light)" />
     <script>
       (function () {
+        var base = '%PUBLIC_URL%';
+        var theme = 'dark';
         try {
           var t = localStorage.getItem('theme');
-          if (t === 'light') {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.style.colorScheme = 'light';
-          } else {
-            document.documentElement.classList.add('dark');
-            document.documentElement.style.colorScheme = 'dark';
-          }
+          if (t === 'light' || t === 'dark') theme = t;
         } catch (e) {
-          document.documentElement.classList.add('dark');
+          theme = 'dark';
         }
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.style.colorScheme = 'light';
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = 'dark';
+        }
+        var osLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        var suffix = osLight ? '' : '-dark';
+        var el16 = document.getElementById('app-favicon-16');
+        var el32 = document.getElementById('app-favicon-32');
+        var el64 = document.getElementById('app-favicon-64');
+        var icon = document.getElementById('app-favicon');
+        var apple = document.getElementById('app-apple-icon');
+        if (el16) el16.href = base + '/favicon-16x16' + suffix + '.png';
+        if (el32) el32.href = base + '/favicon-32x32' + suffix + '.png';
+        if (el64) el64.href = base + '/favicon-64x64' + suffix + '.png';
+        if (icon) icon.href = base + (osLight ? '/favicon.png' : '/favicon-dark.png');
+        if (apple) apple.href = base + (osLight ? '/apple-touch-icon.png' : '/apple-touch-icon-dark.png');
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark light" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="author" content="Riley Happuch" />
-    <meta name="description" content="Riley Happuch — frontend developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations." />
+    <meta name="author" content="THE MISFITS" />
+    <meta name="description" content="THE MISFITS — frontend developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations." />
     <meta name="keywords" content="frontend developer, web developer, React, JavaScript, portfolio, UI, responsive design" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Riley Happuch" />
-    <meta property="og:title" content="Riley Happuch — Frontend Developer Portfolio" />
-    <meta property="og:description" content="Riley Happuch — frontend developer portfolio. React, responsive UI, and performant web applications." />
+    <meta property="og:site_name" content="THE MISFITS" />
+    <meta property="og:title" content="THE MISFITS — Frontend Developer Portfolio" />
+    <meta property="og:description" content="THE MISFITS — frontend developer portfolio. React, responsive UI, and performant web applications." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Riley Happuch — Frontend Developer Portfolio" />
-    <meta name="twitter:description" content="Riley Happuch — frontend developer portfolio. React, responsive UI, and performant web applications." />
+    <meta name="twitter:title" content="THE MISFITS — Frontend Developer Portfolio" />
+    <meta name="twitter:description" content="THE MISFITS — frontend developer portfolio. React, responsive UI, and performant web applications." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="%PUBLIC_URL%/lib/animate/animate.min.css" rel="stylesheet">
-    <title>Riley Happuch — Frontend Developer Portfolio</title>
+    <title>THE MISFITS — Frontend Developer Portfolio</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "WebSite",
-          "name": "Riley Happuch — Frontend Developer Portfolio",
-          "description": "Portfolio of Riley Happuch, frontend developer specializing in React and responsive web applications.",
+          "name": "THE MISFITS — Frontend Developer Portfolio",
+          "description": "Portfolio of THE MISFITS, frontend developer specializing in React and responsive web applications.",
           "inLanguage": "en"
         },
         {
-          "@type": "Person",
-          "name": "Riley Happuch",
-          "jobTitle": "Frontend Developer",
+          "@type": "Organization",
+          "name": "THE MISFITS",
+          "description": "Frontend development and responsive web applications.",
           "knowsAbout": ["React", "JavaScript", "TypeScript", "Responsive Web Design", "UI Development"],
           "sameAs": [
             "https://github.com",

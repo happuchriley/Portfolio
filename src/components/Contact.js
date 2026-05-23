@@ -4,7 +4,7 @@ const EMAIL = 'rileyhappuch@gmail.com';
 const PHONE_DISPLAY = '054 689 6286';
 const PHONE_TEL = '+233546896286';
 const WHATSAPP_E164 = '233546896286';
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent("Hi Riley — I'm reaching out from your portfolio.")}`;
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent("Hi — I'm reaching out from THE MISFITS portfolio.")}`;
 
 const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY?.trim();
 const SUBMIT_COOLDOWN_MS = 45_000;

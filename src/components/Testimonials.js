@@ -3,19 +3,19 @@ import React, { useState, useEffect, useMemo } from 'react';
 const Testimonials = () => {
   const testimonials = useMemo(() => [
     {
-      text: "Working with Riley was an absolute pleasure. He delivered a stunning React application that exceeded our expectations. His attention to detail and communication throughout the project was exceptional. Highly recommended!",
+      text: "Working with THE MISFITS was an absolute pleasure. They delivered a stunning React application that exceeded our expectations. Their attention to detail and communication throughout the project was exceptional. Highly recommended!",
       name: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
       image: "/img/testimonial-1.jpg"
     },
     {
-      text: "Riley transformed our outdated website into a modern, responsive masterpiece. His expertise in frontend development and UI/UX design helped us increase our conversion rate by 40%. The project was completed on time and within budget.",
+      text: "THE MISFITS transformed our outdated website into a modern, responsive masterpiece. Their expertise in frontend development and UI/UX design helped us increase our conversion rate by 40%. The project was completed on time and within budget.",
       name: "Michael Chen",
       role: "Product Manager, Digital Solutions",
       image: "/img/testimonial-2.jpg"
     },
     {
-      text: "I've worked with many developers, but Riley stands out for his technical skills and professionalism. He built a complex Vue.js application with clean code and excellent documentation. Will definitely work with him again!",
+      text: "I've worked with many developers, but THE MISFITS stands out for their technical skills and professionalism. They built a complex Vue.js application with clean code and excellent documentation. Will definitely work with them again!",
       name: "Emily Rodriguez",
       role: "Founder, Creative Agency",
       image: "/img/testimonial-3.jpg"

@@ -1,4 +1,4 @@
-# Riley Happuch Portfolio
+# THE MISFITS Portfolio
 
 ## Run Locally
 
