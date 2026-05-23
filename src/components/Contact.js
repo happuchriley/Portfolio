@@ -62,31 +62,28 @@ const Contact = () => {
 
     setSubmitting(true);
     try {
+      const payload = new FormData();
+      payload.append('access_key', WEB3FORMS_KEY);
+      payload.append('name', formData.name.trim());
+      payload.append('email', formData.email.trim());
+      payload.append('subject', `[Portfolio] ${formData.subject.trim()}`);
+      payload.append('message', formData.message.trim());
+      payload.append('from_name', formData.name.trim());
+      payload.append('replyto', formData.email.trim());
+
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `[Portfolio] ${formData.subject.trim()}`,
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          message: formData.message.trim(),
-          from_name: formData.name.trim(),
-          replyto: formData.email.trim(),
-        }),
+        body: payload,
       });
 
       const data = await res.json().catch(() => ({}));
 
-      if (data.success) {
+      if (res.ok && data.success) {
         lastSubmitRef.current = Date.now();
         setFormData(initialForm);
         setStatus({
           type: 'success',
-          text: 'Thanks — your message was sent. I’ll get back to you soon.',
+          text: 'Success! Your message has been sent. I’ll get back to you soon.',
         });
       } else {
         setStatus({
