@@ -66,7 +66,7 @@ const Contact = () => {
       payload.append('access_key', WEB3FORMS_KEY);
       payload.append('name', formData.name.trim());
       payload.append('email', formData.email.trim());
-      payload.append('subject', `[Portfolio] ${formData.subject.trim()}`);
+      payload.append('subject', `[THE MISFITS] ${formData.subject.trim()}`);
       payload.append('message', formData.message.trim());
       payload.append('from_name', formData.name.trim());
       payload.append('replyto', formData.email.trim());
