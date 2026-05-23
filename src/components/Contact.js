@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
+import {
+  CONTACT_EMAILS,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  WHATSAPP_E164,
+} from '../constants/contact';
 
-const EMAIL = 'rileyhappuch@gmail.com';
-const PHONE_DISPLAY = '054 689 6286';
-const PHONE_TEL = '+233546896286';
-const WHATSAPP_E164 = '233546896286';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent("Hi — I'm reaching out from THE MISFITS portfolio.")}`;
 
 const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY?.trim();
@@ -53,7 +55,7 @@ const Contact = () => {
     if (!WEB3FORMS_KEY) {
       setStatus({
         type: 'info',
-        text: `I couldn’t send that from here — please use ${EMAIL} or WhatsApp below.`,
+        text: `I couldn’t send that from here — please use ${CONTACT_EMAILS.join(' or ')} or WhatsApp below.`,
       });
       return;
     }
@@ -134,9 +136,17 @@ const Contact = () => {
                 </div>
                 <div className="min-w-0 pt-1">
                   <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Email</h4>
-                  <a className="mb-0 text-foreground dark:text-gray-300 break-all hover:text-primary transition-colors" href={`mailto:${EMAIL}`}>
-                    {EMAIL}
-                  </a>
+                  <div className="flex flex-col gap-1">
+                    {CONTACT_EMAILS.map((address) => (
+                      <a
+                        key={address}
+                        className="mb-0 text-foreground dark:text-gray-300 break-all hover:text-primary transition-colors"
+                        href={`mailto:${address}`}
+                      >
+                        {address}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
 

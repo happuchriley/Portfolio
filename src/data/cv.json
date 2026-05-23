@@ -1,75 +1,219 @@
 {
   "name": "Derrick Teye",
-  "brand": "THE MISFITS",
-  "title": "Frontend Developer",
-  "email": "rileyhappuch@gmail.com",
-  "phone": "+233 54 689 6286",
-  "location": "Ghana · Available for remote work",
-  "portfolio": "https://the-misfits.netlify.app/",
-  "github": "https://github.com/happuchriley/Portfolio",
-  "summary": "Frontend Developer with 3+ years of experience building modern, responsive web applications. I specialize in React, JavaScript, and polished UI/UX — from e-commerce storefronts and dashboards to portfolio and social products. I focus on performance, accessibility, and clean, maintainable code.",
-  "highlights": [
-    "3+ years professional frontend development",
-    "React, JavaScript, TypeScript, and modern CSS",
-    "Responsive, mobile-first interfaces",
-    "E-commerce, dashboards, and content-driven apps"
+  "title": "Front-End Developer | UI/UX Designer | IT Support Specialist",
+  "email": "derrickteye21@gmail.com",
+  "emailAlt": "theemisfits1@gmail.com",
+  "phone": "054 689 6286",
+  "address": "Nii Aku Mensah Ave, Accra, Ghana",
+  "location": "Accra, Ghana",
+  "portfolio": "https://rileyhappuch.netlify.app/",
+  "github": "https://github.com/happuchriley",
+  "linkedin": "",
+  "summary": "Results-driven Front-End Developer, UI/UX Designer, and IT Support Specialist with hands-on experience developing scalable, responsive, and user-focused web applications using React.js, JavaScript, Tailwind CSS, Bootstrap, REST APIs, Supabase, and PostgreSQL. Proven ability to deploy production-ready applications, integrate payment systems such as Paystack, and leverage AI-assisted development tools including Cursor AI and ChatGPT to improve development efficiency, debugging, and rapid prototyping. Experienced in IT support, school management systems, client onboarding, and audit system development through National Service at Excelz Audit. Passionate about building intuitive digital solutions, improving user experience, and delivering technology-driven business solutions.",
+  "competencies": [
+    "Front-End Development",
+    "React.js Development",
+    "Responsive Web Design",
+    "REST API Integration",
+    "Payment Gateway Integration",
+    "UI/UX Design",
+    "IT Support and Troubleshooting",
+    "School Management Systems",
+    "Database Management",
+    "Client Onboarding",
+    "Web Application Deployment",
+    "AI-Assisted Development",
+    "Git Version Control",
+    "Responsive Optimization",
+    "Component-Based Architecture"
   ],
   "skills": {
-    "Core": ["JavaScript", "TypeScript", "HTML5", "CSS3", "React", "Next.js", "Vue.js"],
-    "UI & styling": ["Tailwind CSS", "Responsive design", "Component architecture", "Accessibility"],
-    "Backend & data": ["REST APIs", "GraphQL", "Supabase", "Firebase", "PostgreSQL"],
-    "Tools": ["Git", "Netlify", "Webpack", "Chart.js", "Styled Components", "Material UI"]
+    "Front-End Development": [
+      "React.js",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Responsive Web Design",
+      "DOM Manipulation"
+    ],
+    "Backend and APIs": ["REST APIs", "Supabase", "Python", "Django (Foundation)"],
+    "Database Technologies": ["PostgreSQL"],
+    "Payment Integration": ["Paystack Payment Gateway Integration"],
+    "Tools and Platforms": [
+      "Git",
+      "GitHub",
+      "Netlify",
+      "VS Code",
+      "Figma",
+      "Cursor AI",
+      "ChatGPT",
+      "GitHub Copilot"
+    ],
+    "UI/UX Design": [
+      "Wireframing",
+      "Prototyping",
+      "User Interface Design",
+      "User Experience Optimization"
+    ],
+    "AI-Assisted Development": [
+      "Prompt Engineering",
+      "AI-Assisted Debugging",
+      "Code Optimization",
+      "Rapid Prototyping"
+    ],
+    "Soft Skills": [
+      "Problem Solving",
+      "Communication",
+      "Team Collaboration",
+      "Client Support",
+      "Organizational Skills",
+      "Attention to Detail"
+    ]
   },
+  "languages": ["English", "Twi"],
   "experience": [
     {
-      "role": "Frontend Developer",
-      "company": "Freelance · THE MISFITS",
-      "period": "2021 – Present",
+      "role": "IT Expert (National Service)",
+      "company": "Excelz Audit",
+      "location": "Ghana",
+      "period": "2025 – Present",
       "bullets": [
-        "Design and build responsive web apps for clients across e-commerce, education, and enterprise sectors.",
-        "Deliver React and Vue.js frontends with secure auth, real-time data, and optimized Core Web Vitals.",
-        "Collaborate on UI/UX, translate Figma-style requirements into accessible, production-ready interfaces.",
-        "Ship and maintain projects on Netlify with CI-friendly workflows and documented handoffs."
+        "Provide IT support and technical solutions for internal operations and client services.",
+        "Support and maintain school management systems used for administration, reporting, and student data management.",
+        "Assist in onboarding and technical setup for multiple clients, improving user adoption and operational efficiency.",
+        "Collaborate in the development of an audit management system to streamline workflow automation and reporting processes.",
+        "Troubleshoot software, network, and system-related issues to ensure uninterrupted daily operations.",
+        "Support deployment, testing, and system documentation activities for internal software solutions.",
+        "Work closely with teams to implement technology-driven improvements and enhance service delivery across organizational systems."
+      ]
+    },
+    {
+      "role": "IT Support and Programming Intern",
+      "company": "Teachers' Fund",
+      "location": "Accra, Ghana",
+      "period": "July 2024 – August 2024",
+      "bullets": [
+        "Collaborated with senior developers on Python and Django-based web applications and internal systems.",
+        "Assisted in developing technical documentation and blog content to improve user guidance and platform engagement.",
+        "Enhanced front-end functionality and responsive user interfaces using HTML, CSS, JavaScript, and responsive design techniques.",
+        "Supported troubleshooting, testing, and maintenance of internal systems and web applications.",
+        "Participated in debugging and optimizing application performance and usability."
+      ]
+    },
+    {
+      "role": "Freelance Web Developer",
+      "company": "Self-employed",
+      "location": "Accra, Ghana",
+      "period": "2023 – Present",
+      "bullets": [
+        "Design and develop responsive web applications and business websites using React.js, JavaScript, Tailwind CSS, Bootstrap, REST APIs, Supabase, PostgreSQL, and AI-assisted development workflows.",
+        "Successfully developed and deployed 6 responsive web applications optimized for desktop, tablet, and mobile devices.",
+        "Integrated REST APIs and backend services for dynamic data handling and improved application functionality.",
+        "Implemented Paystack payment gateway integration for secure online transaction processing.",
+        "Leveraged Cursor AI, ChatGPT, and GitHub Copilot to accelerate development workflows, debugging, and rapid prototyping.",
+        "Managed deployment workflows using GitHub and Netlify for production-ready applications.",
+        "Improved application usability and accessibility through responsive UI/UX optimization techniques.",
+        "Built reusable frontend components and scalable application structures using modern React.js architecture.",
+        "Integrated PostgreSQL and Supabase databases for authentication, cloud storage, and data management workflows."
       ]
     }
   ],
   "projects": [
     {
-      "name": "The Misfits Shop",
-      "url": "https://themisfits.netlify.app/",
-      "stack": "React, TypeScript, Supabase, Styled Components",
-      "description": "E-commerce storefront with product browsing, cart flow, and brand-forward UI."
+      "name": "Riley Happuch Portfolio Website",
+      "url": "https://rileyhappuch.netlify.app/",
+      "stack": "React.js, Tailwind CSS, Netlify",
+      "bullets": [
+        "Designed and developed a modern responsive portfolio website showcasing technical projects and frontend development capabilities.",
+        "Implemented responsive layouts optimized across desktop, tablet, and mobile devices to improve accessibility and user experience."
+      ]
     },
     {
-      "name": "Gloss Girlies",
+      "name": "GlossGirlies Platform",
       "url": "https://glossgirlies.netlify.app/",
-      "stack": "Vue.js, Tailwind CSS, Supabase, Vuex",
-      "description": "Beauty e-commerce site with category navigation, search, and checkout experience."
+      "stack": "React.js, Tailwind CSS, REST APIs",
+      "bullets": [
+        "Developed a responsive beauty and lifestyle platform featuring modern UI components and optimized navigation workflows.",
+        "Improved user interaction and accessibility through responsive design and user-centered interface optimization."
+      ]
     },
     {
-      "name": "School Management System — Skuul",
-      "url": "https://sku-ul.netlify.app/",
-      "stack": "Next.js, React, GraphQL, Stripe",
-      "description": "Admin dashboard for students, staff, billing, and school operations."
+      "name": "The Misfits Website",
+      "url": "https://themisfits.netlify.app/",
+      "stack": "React.js, Bootstrap, JavaScript",
+      "bullets": [
+        "Built a visually engaging and responsive website with interactive frontend functionality and optimized layouts.",
+        "Enhanced overall user engagement through intuitive UI/UX implementation and responsive performance improvements."
+      ]
     },
     {
-      "name": "Enterprise Audit Suite",
+      "name": "Audit Management System",
       "url": "https://audit-software.netlify.app/",
-      "stack": "React, Firebase, Material UI, Chart.js",
-      "description": "Audit workspace with workpapers, risk summaries, and partner reporting."
+      "stack": "React.js, Supabase, PostgreSQL",
+      "bullets": [
+        "Collaborated in developing an audit management platform focused on workflow automation and reporting efficiency.",
+        "Implemented responsive interfaces and optimized application usability for improved operational processes."
+      ]
     },
     {
-      "name": "Farm-Flux",
+      "name": "FarmFlux Agricultural Platform",
       "url": "https://farm-flux.netlify.app/",
-      "stack": "React, Next.js, PostgreSQL, Tailwind CSS",
-      "description": "Social platform for farmers — feeds, profiles, and community features."
+      "stack": "React.js, Tailwind CSS, REST APIs",
+      "bullets": [
+        "Developed a responsive agricultural platform focused on improving access to farming resources and information for smallholder farmers.",
+        "Built interactive components and mobile-friendly interfaces using modern frontend technologies."
+      ]
+    },
+    {
+      "name": "SKU-UL Platform",
+      "url": "https://sku-ul.netlify.app/",
+      "stack": "React.js, Supabase, PostgreSQL",
+      "bullets": [
+        "Developed a scalable and responsive web application using modern frontend development practices.",
+        "Applied reusable component architecture and responsive optimization techniques to improve maintainability and application performance."
+      ]
     }
+  ],
+  "devWorkflow": [
+    "Git and GitHub Version Control",
+    "Deployment using Netlify",
+    "API Integration and Testing",
+    "Responsive Testing and Optimization",
+    "Component-Based Architecture",
+    "UI/UX Collaboration using Figma",
+    "AI-Assisted Development Workflows",
+    "Frontend Performance Optimization"
+  ],
+  "databaseApi": [
+    "Integrated REST APIs for dynamic application data management and real-time functionality.",
+    "Worked with asynchronous JavaScript workflows and API-based architectures.",
+    "Managed PostgreSQL and Supabase databases for authentication, storage, and backend data handling.",
+    "Implemented secure backend integrations and cloud-based database workflows."
   ],
   "education": [
     {
-      "credential": "Continuous professional development",
-      "institution": "Modern web technologies & frontend engineering",
-      "period": "Ongoing"
+      "credential": "Bachelor of Science (BSc), Information Technology Management",
+      "institution": "University of Professional Studies, Accra",
+      "period": "2022 – 2025",
+      "coursework": [
+        "Web Development",
+        "Database Management",
+        "Software Development",
+        "Programming",
+        "Communication Skills",
+        "Logic and Critical Thinking"
+      ]
     }
+  ],
+  "achievements": [
+    "Successfully developed and deployed 6 responsive web applications using modern frontend technologies.",
+    "Integrated Paystack payment systems into web applications for secure online transactions.",
+    "Supported school management systems and client onboarding during National Service.",
+    "Collaborated in developing an audit management system to improve workflow efficiency and reporting processes.",
+    "Applied AI-assisted development tools to improve productivity, debugging, and rapid prototyping workflows.",
+    "Built scalable responsive interfaces optimized for accessibility and cross-device compatibility.",
+    "Improved application usability and user engagement through modern UI/UX implementation techniques."
   ]
 }
