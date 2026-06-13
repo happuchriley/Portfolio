@@ -15,7 +15,7 @@ Add to `.env`:
 
 ```bash
 REACT_APP_WEB3FORMS_ACCESS_KEY=your_web3forms_key
-REACT_APP_SITE_URL=https://your-domain.com
+REACT_APP_SITE_URL=https://portfolio.theemisfits.com
 ```
 
 ## Build

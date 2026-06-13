@@ -8,13 +8,13 @@ const Hero = () => {
       image: '/img/carousel-1.jpg',
       title: "Hello, I'm Derrick Teye",
       subtitle: 'Frontend Developer',
-      description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
+      description: "I build scalable web apps with React, Next.js, TypeScript,\n and Tailwind — from component architecture to production deployment."
     },
     {
       image: '/img/carousel-2.jpg',
       title: "Hello, I'm Derrick Teye",
       subtitle: 'Frontend Developer',
-      description: "I create beautiful, responsive, and performant web applications\n using modern technologies and best practices."
+      description: "Modern frameworks, clean code, and performant UIs —\n turning complex ideas into apps users love."
     }
   ], []);
 

@@ -28,7 +28,7 @@ const Portfolio = () => {
         "Styled Components",
         "Git",
       ],
-      link: "https://themisfits.netlify.app/",
+      link: "https://theemisfits.com/",
     },
     {
       title: "Gloss Girlies",
@@ -63,7 +63,7 @@ const Portfolio = () => {
         "WOW.js",
         "Netlify",
       ],
-      link: "https://the-misfits.netlify.app/",
+      link: "https://portfolio.theemisfits.com/",
     },
     {
       title: "Audit Software",
@@ -77,7 +77,7 @@ const Portfolio = () => {
         "PWA",
         "Webpack",
       ],
-      link: "https://audit-software.netlify.app/",
+      link: "https://excelz-audit.vercel.app/",
     },
     {
       title: "Farm-Flux",

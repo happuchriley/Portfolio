@@ -41,19 +41,40 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="dark light" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="author" content="THE MISFITS" />
-    <meta name="description" content="THE MISFITS — Frontend Developer portfolio. React, responsive UI, and performant web applications. Open to remote work and collaborations." />
-    <meta name="keywords" content="Frontend Developer, web developer, React, JavaScript, portfolio, UI, responsive design" />
+    <meta name="application-name" content="THE MISFITS" />
+    <meta name="description" content="THE MISFITS — Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS. Building scalable SPAs, integrating APIs, and shipping performant web apps." />
+    <meta name="keywords" content="Frontend Developer, React developer, Next.js, TypeScript, Tailwind CSS, JavaScript, web developer, portfolio, UI developer, SPA, Supabase, Netlify, Ghana, remote developer" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <link rel="canonical" href="https://portfolio.theemisfits.com/" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.webmanifest" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://portfolio.theemisfits.com/sitemap.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="THE MISFITS" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://portfolio.theemisfits.com/" />
     <meta property="og:title" content="THE MISFITS — Frontend Developer Portfolio" />
-    <meta property="og:description" content="THE MISFITS — Frontend Developer portfolio. React, responsive UI, and performant web applications." />
+    <meta property="og:description" content="THE MISFITS — Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS. Building scalable SPAs and performant web apps." />
+    <meta property="og:image" content="https://portfolio.theemisfits.com/img/the-misfits-logo.png" />
+    <meta property="og:image:alt" content="THE MISFITS — Frontend Developer Portfolio" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@themisfits" />
     <meta name="twitter:title" content="THE MISFITS — Frontend Developer Portfolio" />
-    <meta name="twitter:description" content="THE MISFITS — Frontend Developer portfolio. React, responsive UI, and performant web applications." />
+    <meta name="twitter:description" content="THE MISFITS — Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS." />
+    <meta name="twitter:image" content="https://portfolio.theemisfits.com/img/the-misfits-logo.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="THE MISFITS" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -65,19 +86,40 @@
       "@graph": [
         {
           "@type": "WebSite",
+          "@id": "https://portfolio.theemisfits.com/#website",
+          "url": "https://portfolio.theemisfits.com/",
           "name": "THE MISFITS — Frontend Developer Portfolio",
-          "description": "Portfolio of THE MISFITS, Frontend Developer specializing in React and responsive web applications.",
-          "inLanguage": "en"
+          "description": "Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS.",
+          "inLanguage": "en-US",
+          "publisher": { "@id": "https://portfolio.theemisfits.com/#organization" }
         },
         {
           "@type": "Organization",
+          "@id": "https://portfolio.theemisfits.com/#organization",
           "name": "THE MISFITS",
-          "description": "Frontend Developer — responsive web applications and UI.",
-          "knowsAbout": ["React", "JavaScript", "TypeScript", "Responsive Web Design", "UI Development"],
+          "url": "https://portfolio.theemisfits.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://portfolio.theemisfits.com/img/the-misfits-logo.png"
+          },
+          "description": "Frontend Developer — React, Next.js, TypeScript, and modern web applications.",
+          "knowsAbout": ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Supabase", "REST APIs", "UI Development", "Web Performance"],
           "sameAs": [
-            "https://github.com",
-            "https://linkedin.com",
-            "https://twitter.com"
+            "https://github.com/happuchriley",
+            "https://portfolio.theemisfits.com"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://portfolio.theemisfits.com/#person",
+          "name": "Derrick Teye",
+          "jobTitle": "Frontend Developer",
+          "url": "https://portfolio.theemisfits.com/",
+          "worksFor": { "@id": "https://portfolio.theemisfits.com/#organization" },
+          "knowsAbout": ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
+          "sameAs": [
+            "https://github.com/happuchriley",
+            "https://portfolio.theemisfits.com"
           ]
         }
       ]

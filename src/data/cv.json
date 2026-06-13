@@ -6,7 +6,7 @@
   "phone": "054 689 6286",
   "address": "Nii Aku Mensah Ave, Accra, Ghana",
   "location": "Accra, Ghana",
-  "portfolio": "https://rileyhappuch.netlify.app/",
+  "portfolio": "https://portfolio.theemisfits.com/",
   "github": "https://github.com/happuchriley",
   "linkedin": "",
   "summary": "Results-driven Front-End Developer, UI/UX Designer, and IT Support Specialist with hands-on experience developing scalable, responsive, and user-focused web applications using React.js, JavaScript, Tailwind CSS, Bootstrap, REST APIs, Supabase, and PostgreSQL. Proven ability to deploy production-ready applications, integrate payment systems such as Paystack, and leverage AI-assisted development tools including Cursor AI and ChatGPT to improve development efficiency, debugging, and rapid prototyping. Experienced in IT support, school management systems, client onboarding, and audit system development through National Service at Excelz Audit. Passionate about building intuitive digital solutions, improving user experience, and delivering technology-driven business solutions.",
@@ -30,13 +30,13 @@
   "skills": {
     "Front-End Development": [
       "React.js",
+      "Next.js",
+      "TypeScript",
       "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
       "Tailwind CSS",
-      "Bootstrap",
-      "Responsive Web Design",
-      "DOM Manipulation"
+      "React Router",
+      "Component Architecture",
+      "Responsive Web Design"
     ],
     "Backend and APIs": ["REST APIs", "Supabase", "Python", "Django (Foundation)"],
     "Database Technologies": ["PostgreSQL"],
@@ -122,8 +122,8 @@
   ],
   "projects": [
     {
-      "name": "Riley Happuch Portfolio Website",
-      "url": "https://rileyhappuch.netlify.app/",
+      "name": "THE MISFITS Portfolio Website",
+      "url": "https://portfolio.theemisfits.com/",
       "stack": "React.js, Tailwind CSS, Netlify",
       "bullets": [
         "Designed and developed a modern responsive portfolio website showcasing technical projects and frontend development capabilities.",
@@ -140,8 +140,8 @@
       ]
     },
     {
-      "name": "The Misfits Website",
-      "url": "https://themisfits.netlify.app/",
+      "name": "The Misfits Shop",
+      "url": "https://theemisfits.com/",
       "stack": "React.js, Bootstrap, JavaScript",
       "bullets": [
         "Built a visually engaging and responsive website with interactive frontend functionality and optimized layouts.",
@@ -150,7 +150,7 @@
     },
     {
       "name": "Audit Management System",
-      "url": "https://audit-software.netlify.app/",
+      "url": "https://excelz-audit.vercel.app/",
       "stack": "React.js, Supabase, PostgreSQL",
       "bullets": [
         "Collaborated in developing an audit management platform focused on workflow automation and reporting efficiency.",

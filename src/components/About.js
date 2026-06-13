@@ -32,17 +32,27 @@ const About = () => {
               </div>
             </div>
             <p
-              className="mb-6 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
+              className="mb-4 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
               data-wow-delay="0.2s"
             >
-              I'm a passionate Frontend Developer with over 3+ years of
-              experience creating modern, responsive web applications. I
-              specialize in building user-friendly interfaces using React,
-              JavaScript, and modern CSS. My goal is to create seamless user
-              experiences that are both beautiful and functional.
+              I'm a passionate Frontend Developer with 3+ years of experience
+              building production web applications with modern JavaScript
+              frameworks. I specialize in React and Next.js — architecting
+              component-based UIs, integrating REST APIs and Supabase, and
+              shipping performant apps to Netlify.
+            </p>
+            <p
+              className="mb-6 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
+              data-wow-delay="0.25s"
+            >
+              My toolkit spans TypeScript, Tailwind CSS, React Router, state
+              management patterns, and AI-assisted workflows with Cursor and
+              GitHub Copilot. I focus on clean architecture, accessibility, and
+              measurable performance — not just pixels, but code that teams can
+              maintain and scale.
             </p>
             <ul
-              className="list-none mb-8 space-y-3 wow fadeInUp"
+              className="list-none mb-6 space-y-3 wow fadeInUp"
               data-wow-delay="0.3s"
             >
               <li className="flex items-center text-foreground dark:text-gray-300">
@@ -50,23 +60,52 @@ const About = () => {
                   className="fa fa-check-circle text-primary mr-2"
                   aria-hidden="true"
                 ></i>
-                3+ Years of Professional Experience
+                3+ Years building with React, Next.js &amp; TypeScript
               </li>
               <li className="flex items-center text-foreground dark:text-gray-300">
                 <i
                   className="fa fa-check-circle text-primary mr-2"
                   aria-hidden="true"
                 ></i>
-                Expert in React, JavaScript & responsive UI
+                Component architecture, hooks &amp; REST API integration
               </li>
               <li className="flex items-center text-foreground dark:text-gray-300">
                 <i
                   className="fa fa-check-circle text-primary mr-2"
                   aria-hidden="true"
                 ></i>
-                Responsive Design & Mobile-First Approach
+                Tailwind CSS, design systems &amp; responsive UI at scale
+              </li>
+              <li className="flex items-center text-foreground dark:text-gray-300">
+                <i
+                  className="fa fa-check-circle text-primary mr-2"
+                  aria-hidden="true"
+                ></i>
+                Deployment, CI/CD &amp; Core Web Vitals optimization
               </li>
             </ul>
+            <div
+              className="flex flex-wrap gap-2 mb-8 wow fadeInUp"
+              data-wow-delay="0.35s"
+              aria-label="Technologies and frameworks"
+            >
+              {[
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Supabase",
+                "Vite",
+                "Netlify",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary border border-primary/30 rounded-full text-xs sm:text-sm font-semibold"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
             <div
               className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 wow fadeInUp"
               data-wow-delay="0.4s"

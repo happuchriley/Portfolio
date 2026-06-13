@@ -1,0 +1,31 @@
+{
+  "name": "THE MISFITS — Frontend Developer Portfolio",
+  "short_name": "THE MISFITS",
+  "description": "Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "business"],
+  "icons": [
+    {
+      "src": "/favicon-32x32-dark.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-64x64-dark.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon-dark.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

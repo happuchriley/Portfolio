@@ -1,4 +1,9 @@
-# Netlify & Cloudflare Pages: send all non-file routes to the SPA shell so
-# React Router (and client-side 404) work on refresh and deep links.
-# Static assets under /static/ and other files are still served when they exist.
-/*    /index.html   200
+# SEO & static files — must be listed before the SPA fallback so crawlers
+# receive real XML/text instead of index.html.
+/sitemap.xml           /sitemap.xml           200
+/robots.txt            /robots.txt            200
+/manifest.webmanifest  /manifest.webmanifest  200
+/browserconfig.xml     /browserconfig.xml     200
+
+# Netlify SPA fallback for client-side routes.
+/*                     /index.html            200
