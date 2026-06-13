@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "build"
 
+# Public site URL must appear in sitemap/SEO output — not a secret.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "REACT_APP_SITE_URL"
+
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
