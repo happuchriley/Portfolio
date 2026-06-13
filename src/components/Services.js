@@ -3,66 +3,84 @@ import React from 'react';
 /** Service photos: Unsplash & Pexels (free license). Stored in /public/img/services/. */
 const services = [
   {
-    title: 'React & SPA Development',
+    title: 'Web Development',
     description:
-      'Building production-grade single-page applications with React — component-driven architecture, client-side routing, state management, and reusable UI systems. From MVPs to full-scale apps, I deliver maintainable codebases that scale with your product.',
+      'Crafting responsive and dynamic websites using the latest technologies and best practices. Specializing in turning ideas into functional and user-friendly digital experiences.',
     tags: ['React', 'React Router', 'Hooks', 'Context API'],
     image: '/img/services/web-development.jpg',
-    imageAlt: 'Laptop with code — React web application development',
+    imageAlt: 'Laptop with code — web development workspace',
     align: 'left',
   },
   {
-    title: 'Next.js & Full-Stack Front-End',
+    title: 'Front-end Development',
     description:
-      'Leveraging Next.js for server-side rendering, static generation, and API routes — faster initial loads, better SEO, and a seamless bridge between front-end and back-end. Ideal for marketing sites, dashboards, and content-heavy platforms that need performance at scale.',
+      'Creating the user interface and experience with modern JavaScript frameworks. Focusing on visually appealing, interactive websites that engage users.',
     tags: ['Next.js', 'SSR', 'SSG', 'API Routes'],
     image: '/img/services/frontend-development.jpg',
-    imageAlt: 'Modern website UI on desktop, tablet, and phone — Next.js front-end development',
+    imageAlt: 'Modern website UI on desktop, tablet, and phone — front-end development',
     align: 'right',
   },
   {
-    title: 'TypeScript & Modern JavaScript',
+    title: 'Responsive Web Design',
     description:
-      'Writing type-safe, self-documenting code with TypeScript and ES6+ JavaScript. Strong typing catches bugs early, improves developer experience, and makes large codebases easier to refactor — whether in React, Next.js, or Node.js environments.',
-    tags: ['TypeScript', 'ES6+', 'Jest', 'ESLint'],
-    image: '/img/services/responsive-design.jpg',
-    imageAlt: 'TypeScript and modern JavaScript development workflow',
-    align: 'left',
-  },
-  {
-    title: 'UI Frameworks & Design Systems',
-    description:
-      'Crafting polished interfaces with Tailwind CSS, component libraries, and design tokens — consistent spacing, typography, and theming across every screen. I build accessible, dark-mode-ready UIs that look sharp on any device without reinventing styles from scratch.',
+      'Designing websites that adapt seamlessly to various screen sizes and devices. Prioritizing a consistent, enjoyable experience across desktops, tablets, and smartphones.',
     tags: ['Tailwind CSS', 'Shadcn/ui', 'Radix UI', 'Design Tokens'],
     image: '/img/services/responsive-design.jpg',
-    imageAlt: 'Component library and design system on multiple devices',
-    align: 'right',
-  },
-  {
-    title: 'E-commerce & API Integration',
-    description:
-      'Connecting front-end applications to REST APIs, Supabase, and payment gateways like Stripe and Paystack. I build checkout flows, real-time data sync, and secure authentication — turning your React or Next.js app into a complete, revenue-ready platform.',
-    tags: ['Stripe', 'Supabase', 'REST APIs', 'Paystack'],
-    image: '/img/services/ecommerce.jpg',
-    imageAlt: 'E-commerce checkout and API integration on laptop',
+    imageAlt: 'Responsive layout on tablet and mobile devices',
     align: 'left',
   },
   {
-    title: 'Performance & Deployment',
+    title: 'E-commerce Development',
     description:
-      'Optimizing bundle sizes, lazy loading, code splitting, and Core Web Vitals — then deploying to Netlify with CI/CD. Every app I ship is measured, monitored, and tuned for real-world speed on mobile and desktop.',
-    tags: ['Vite', 'Webpack', 'Netlify', 'Core Web Vitals'],
+      'Building online stores with secure payment flows, inventory considerations, and user-friendly interfaces—platforms that support sales and a smooth shopping experience.',
+    tags: ['Stripe', 'Paystack', 'Supabase', 'REST APIs'],
+    image: '/img/services/ecommerce.jpg',
+    imageAlt: 'Online store checkout on laptop with payment card — e-commerce',
+    align: 'right',
+  },
+  {
+    title: 'Website Maintenance & Support',
+    description:
+      'Ongoing updates, fixes, and care so your site stays secure, functional, and current. Keeping everything running smoothly as your needs evolve.',
+    tags: ['Netlify', 'Vercel', 'Cloudflare', 'Monitoring'],
+    image: '/img/services/maintenance.jpg',
+    imageAlt: 'Team collaborating on website maintenance and support',
+    align: 'left',
+  },
+  {
+    title: 'Performance Optimization',
+    description:
+      'Improving speed and efficiency through code tuning, asset optimization, and solid architecture—faster experiences for users and stronger technical SEO signals.',
+    tags: ['Vite', 'Webpack', 'Core Web Vitals', 'Lazy loading'],
     image: '/img/services/performance.jpg',
     imageAlt: 'Analytics dashboard for web performance metrics',
     align: 'right',
   },
   {
-    title: 'SEO & Technical Foundations',
+    title: 'SEO Integration',
     description:
-      'Implementing structured data, Open Graph tags, sitemaps, and semantic markup so search engines and social platforms index your React or Next.js app correctly. Technical SEO baked into the framework layer — not bolted on after launch.',
+      'Applying SEO best practices to improve visibility and rankings: semantic structure, meta content, performance, and technical foundations search engines reward.',
     tags: ['Schema.org', 'Open Graph', 'Sitemap', 'react-helmet'],
     image: '/img/services/seo.jpg',
-    imageAlt: 'SEO and technical optimization strategy on laptop',
+    imageAlt: 'SEO and digital marketing strategy on laptop',
+    align: 'left',
+  },
+  {
+    title: 'Payment Gateway Integration',
+    description:
+      'Integrating secure checkout flows with Paystack, Stripe, and other payment providers—supporting local and international transactions with a smooth buyer experience.',
+    tags: ['Paystack', 'Stripe', 'Checkout UX', 'Webhooks'],
+    image: '/img/services/ecommerce.jpg',
+    imageAlt: 'Payment gateway integration for online checkout',
+    align: 'right',
+  },
+  {
+    title: 'Deployment & Hosting',
+    description:
+      'Deploying production-ready apps to Netlify, Vercel, Cloudflare Pages, and other platforms. Setting up CI/CD pipelines so every release is fast, reliable, and repeatable.',
+    tags: ['Netlify', 'Vercel', 'CI/CD', 'GitHub Actions'],
+    image: '/img/services/maintenance.jpg',
+    imageAlt: 'Cloud deployment and hosting workflow',
     align: 'left',
   },
 ];
