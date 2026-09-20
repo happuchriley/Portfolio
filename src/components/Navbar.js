@@ -15,6 +15,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const onManage = location.pathname.startsWith('/manage');
+  const solidNav = scrolled || onManage || isOpen;
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)');
@@ -58,7 +60,7 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const linkTone = scrolled
+  const linkTone = solidNav
     ? 'text-ink/70 hover:text-primary dark:text-cream/70 dark:hover:text-ochre'
     : 'text-cream/80 hover:text-ochre';
 
@@ -79,7 +81,7 @@ const Navbar = () => {
         isOpen
           ? 'bg-charcoal/95 shadow-md backdrop-blur-sm lg:bg-transparent lg:shadow-none lg:backdrop-blur-none'
           : ''
-      } ${scrolled ? 'navbar-scrolled' : ''}`}
+      } ${solidNav ? 'navbar-scrolled' : ''}`}
       aria-label="Primary"
     >
       <div className="container mx-auto max-w-7xl">
@@ -101,7 +103,7 @@ const Navbar = () => {
             </span>
             <span
               className={`truncate font-display text-base font-bold uppercase tracking-tight sm:text-lg ${
-                scrolled ? 'text-ink dark:text-cream' : 'text-cream'
+                solidNav ? 'text-ink dark:text-cream' : 'text-cream'
               }`}
             >
               THE MISFITS
@@ -113,7 +115,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <ThemeToggle light={!scrolled && !isOpen} />
+            <ThemeToggle light={!solidNav && !isOpen} />
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, 'contact')}
@@ -124,7 +126,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-1.5 lg:hidden ${
-                scrolled ? 'text-ink dark:text-cream' : 'text-cream'
+                solidNav ? 'text-ink dark:text-cream' : 'text-cream'
               }`}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}

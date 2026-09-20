@@ -91,6 +91,18 @@ const Footer = () => {
         <p className="mb-0 text-xs text-cream/65 sm:text-sm">
           Crafted for product teams who want interfaces with a point of view.
         </p>
+        <p className="mt-4">
+          <a
+            href="/manage"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/manage');
+            }}
+            className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream/40 transition hover:text-ochre"
+          >
+            Add / manage projects
+          </a>
+        </p>
       </div>
 
       <div className="footer-tech-strip" aria-hidden="true">

@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Spinner from './components/Spinner';
 import BackToTop from './components/BackToTop';
+import ManageProjects from './components/ManageProjects';
 import NotFound from './components/NotFound';
 import SEO from './components/SEO';
 
@@ -97,6 +98,7 @@ function App() {
         <Spinner />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/manage" element={<ManageProjects />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

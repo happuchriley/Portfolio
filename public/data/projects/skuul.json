@@ -1,0 +1,18 @@
+{
+  "id": "skuul",
+  "title": "Skuul",
+  "category": "Education",
+  "blurb": "School admin workflows — students, records, and day-to-day operations in one UI.",
+  "image": "/img/skuul.jpg",
+  "imageClass": "object-cover object-top",
+  "technologies": [
+    "Next.js",
+    "React",
+    "GraphQL",
+    "Stripe"
+  ],
+  "link": "https://sku-ul.netlify.app/",
+  "featured": false,
+  "published": true,
+  "order": 3
+}

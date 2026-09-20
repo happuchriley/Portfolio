@@ -1,49 +1,73 @@
+# Place to add / edit portfolio projects (no React code changes).
+# Open /admin/ → Projects → New Project
+
+local_backend: true
+
 backend:
   name: git-gateway
   branch: main
+
 media_folder: public/img/projects
 public_folder: /img/projects
+
 collections:
   - name: projects
     label: Projects
     label_singular: Project
-    folder: public/data/projects-entries
+    description: Add a new portfolio project — title, cover image, live link, and stack.
+    folder: public/data/projects
     create: true
-    slug: "{{slug}}"
+    delete: true
+    slug: "{{id}}"
     extension: json
     format: json
+    identifier_field: title
+    summary: "{{title}} — {{category}}"
+    sortable_fields: ["order", "title", "category"]
     fields:
-      - { label: "ID / Slug", name: id, widget: string }
-      - { label: "Title", name: title, widget: string }
-      - { label: "Category", name: category, widget: string }
-      - { label: "Short description", name: blurb, widget: text }
-      - { label: "Cover image", name: image, widget: image }
-      - { label: "Image CSS class", name: imageClass, widget: string, default: "object-cover object-top", required: false }
-      - { label: "Technologies", name: technologies, widget: list, allow_add: true }
-      - { label: "Live URL", name: link, widget: string, required: false }
-      - { label: "Featured", name: featured, widget: boolean, default: false }
-      - { label: "Published", name: published, widget: boolean, default: true }
-      - { label: "Order", name: order, widget: number, value_type: int, default: 10 }
-  - name: projects_file
-    label: Projects (all-in-one JSON)
-    files:
-      - label: Projects list
-        name: projects
-        file: public/data/projects.json
-        fields:
-          - label: Projects
-            name: projects
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { label: "ID", name: id, widget: string }
-              - { label: "Title", name: title, widget: string }
-              - { label: "Category", name: category, widget: string }
-              - { label: "Short description", name: blurb, widget: text }
-              - { label: "Cover image", name: image, widget: image }
-              - { label: "Image CSS class", name: imageClass, widget: string, default: "object-cover object-top", required: false }
-              - { label: "Technologies", name: technologies, widget: list }
-              - { label: "Live URL", name: link, widget: string, required: false }
-              - { label: "Featured", name: featured, widget: boolean, default: false }
-              - { label: "Published", name: published, widget: boolean, default: true }
-              - { label: "Order", name: order, widget: number, value_type: int, default: 10 }
+      - label: "ID (unique slug)"
+        name: id
+        widget: string
+        hint: "Lowercase, no spaces — e.g. my-new-app. Used as the filename."
+      - label: "Title"
+        name: title
+        widget: string
+      - label: "Category"
+        name: category
+        widget: string
+        hint: "E-commerce, Brand site, Education, Enterprise…"
+      - label: "Short description"
+        name: blurb
+        widget: text
+      - label: "Cover image"
+        name: image
+        widget: image
+      - label: "Image CSS class"
+        name: imageClass
+        widget: string
+        default: "object-cover object-top"
+        required: false
+      - label: "Technologies"
+        name: technologies
+        widget: list
+        allow_add: true
+        hint: "React, Next.js, TypeScript…"
+      - label: "Live URL"
+        name: link
+        widget: string
+        required: false
+        hint: "https://…"
+      - label: "Featured"
+        name: featured
+        widget: boolean
+        default: false
+      - label: "Published"
+        name: published
+        widget: boolean
+        default: true
+      - label: "Order"
+        name: order
+        widget: number
+        value_type: int
+        default: 10
+        hint: "Lower numbers appear first on the site"

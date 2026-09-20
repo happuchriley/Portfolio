@@ -1,0 +1,18 @@
+{
+  "id": "farm-flux",
+  "title": "Farm-Flux",
+  "category": "Operations",
+  "blurb": "Live operations dashboard — auth, feeds, and status at a glance.",
+  "image": "/img/farm-flux.jpg",
+  "imageClass": "object-cover object-center",
+  "technologies": [
+    "Next.js",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Auth"
+  ],
+  "link": "https://farm-flux.netlify.app/",
+  "featured": false,
+  "published": true,
+  "order": 5
+}

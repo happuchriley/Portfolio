@@ -1,0 +1,13 @@
+{
+  "id": "excelz-kpi",
+  "title": "Excelz KPI",
+  "category": "Performance",
+  "blurb": "TeamHub workplace dashboard — attendance, shifts, leave, payroll, and performance in one UI.",
+  "image": "/img/excelz-kpi.png",
+  "imageClass": "object-cover object-top",
+  "technologies": ["React", "TypeScript", "Tailwind CSS", "Netlify"],
+  "link": "https://excelz-kpi.netlify.app/",
+  "featured": false,
+  "published": true,
+  "order": 6
+}

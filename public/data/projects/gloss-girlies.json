@@ -1,0 +1,13 @@
+{
+  "id": "gloss-girlies",
+  "title": "Gloss Girlies",
+  "category": "Brand site",
+  "blurb": "Beauty brand UI — curated skincare, makeup, and haircare with a responsive shop experience.",
+  "image": "/img/gloss-girlies.jpg",
+  "imageClass": "object-cover object-top",
+  "technologies": ["Vue.js", "Supabase", "Tailwind CSS", "Vuex"],
+  "link": "https://gloss-girlies.vercel.app/",
+  "featured": false,
+  "published": true,
+  "order": 2
+}

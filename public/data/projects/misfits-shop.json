@@ -1,0 +1,13 @@
+{
+  "id": "misfits-shop",
+  "title": "The Misfits Shop",
+  "category": "E-commerce",
+  "blurb": "Brand storefront — catalog, cart, and a checkout path ready for real orders.",
+  "image": "/img/misfits-shop.png",
+  "imageClass": "object-cover object-top",
+  "technologies": ["React", "TypeScript", "Supabase", "Styled Components"],
+  "link": "https://theemisfits.com/",
+  "featured": true,
+  "published": true,
+  "order": 1
+}

@@ -1,27 +1,27 @@
 import { useCallback, useEffect, useState } from 'react';
-
-const DATA_URL = `${process.env.PUBLIC_URL || ''}/data/projects.json`;
+import {
+  fetchSiteProjects,
+  readLocalProjects,
+  sortProjects,
+} from '../lib/projectsStore';
 
 /**
- * Load published projects from /public/data/projects.json
- * Edit that file (or use /admin Decap CMS) — no React changes needed.
+ * Load projects for Recent work.
+ * Prefer local manage-desk edits (localStorage), else public/data/projects.json.
+ * Manage at /manage — add, edit, remove without touching React components.
  */
 export function useProjects() {
   const [projects, setProjects] = useState([]);
-  const [status, setStatus] = useState('loading'); // loading | ready | error
+  const [status, setStatus] = useState('loading');
   const [error, setError] = useState(null);
 
   const load = useCallback(async () => {
     setStatus('loading');
     setError(null);
     try {
-      const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`Failed to load projects (${res.status})`);
-      const data = await res.json();
-      const list = Array.isArray(data) ? data : data.projects || [];
-      const published = list
-        .filter((p) => p && p.published !== false)
-        .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+      const local = readLocalProjects();
+      const list = local || (await fetchSiteProjects());
+      const published = sortProjects(list).filter((p) => p && p.published !== false);
       setProjects(published);
       setStatus('ready');
     } catch (err) {
@@ -33,6 +33,13 @@ export function useProjects() {
 
   useEffect(() => {
     load();
+    const onUpdate = () => load();
+    window.addEventListener('misfits-projects-updated', onUpdate);
+    window.addEventListener('storage', onUpdate);
+    return () => {
+      window.removeEventListener('misfits-projects-updated', onUpdate);
+      window.removeEventListener('storage', onUpdate);
+    };
   }, [load]);
 
   return { projects, status, error, reload: load };

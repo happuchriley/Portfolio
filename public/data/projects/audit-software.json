@@ -1,0 +1,13 @@
+{
+  "id": "audit-software",
+  "title": "Excelz Audit",
+  "category": "Enterprise",
+  "blurb": "Enterprise audit workspace — acceptance, planning, fieldwork, evidence, and sign-off in one platform.",
+  "image": "/img/audit-software.png",
+  "imageClass": "object-cover object-top",
+  "technologies": ["React", "Firebase", "Chart.js", "PWA"],
+  "link": "https://excelz-audit.vercel.app/",
+  "featured": false,
+  "published": true,
+  "order": 4
+}

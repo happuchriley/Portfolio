@@ -5,5 +5,10 @@
 /manifest.webmanifest  /manifest.webmanifest  200
 /browserconfig.xml     /browserconfig.xml     200
 
+# Admin CMS (static) — keep before SPA fallback
+/admin              /admin/index.html    200
+/admin/             /admin/index.html    200
+/admin/*            /admin/index.html    200
+
 # Netlify SPA fallback for client-side routes.
 /*                     /index.html            200
