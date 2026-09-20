@@ -3,50 +3,55 @@ import React from 'react';
 const CTA = () => {
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="w-full py-10 sm:py-12 lg:py-20 bg-secondary dark:bg-dark" aria-labelledby="cta-heading">
-      <div className="container mx-auto max-w-7xl">
-        <div className="flex justify-center">
-          <div className="w-full min-w-0 lg:w-7/12 text-center max-w-3xl mx-auto px-1 sm:px-0">
-            <div className="title mx-auto px-2 sm:px-5 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="title-center">
-                <p className="relative inline-block text-base sm:text-lg font-light uppercase mb-2 text-foreground/80 dark:text-gray-400">
-                  Let&apos;s Work Together
-                </p>
-                <h2 id="cta-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-dark dark:text-white border-b border-dark/20 dark:border-white/20 pb-2">
-                  Have a Project in Mind?
-                </h2>
-              </div>
-            </div>
-            <p className="text-base sm:text-lg md:text-xl mb-8 wow fadeInUp text-foreground dark:text-gray-300 hyphens-auto break-words px-1" data-wow-delay="0.2s">
-              I&apos;m always interested in new opportunities and exciting projects.{' '}
-              <span className="hidden sm:inline">
-                <br />
-              </span>
-              Let&apos;s discuss how I can help bring your ideas to life.
-            </p>
-            <div className="wow fadeInUp flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3" data-wow-delay="0.3s">
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, 'contact')}
-                className="btn btn-primary py-3 px-8 min-h-[48px] inline-flex items-center justify-center"
-              >
-                Get In Touch
-              </a>
-              <a
-                href="#portfolio"
-                onClick={(e) => scrollToSection(e, 'portfolio')}
-                className="btn btn-outline-primary border-2 py-3 px-8 min-h-[48px] inline-flex items-center justify-center"
-              >
-                View Portfolio
-              </a>
-            </div>
+    <section
+      className="relative w-full overflow-hidden py-16 sm:py-20 lg:py-28"
+      aria-labelledby="cta-heading"
+    >
+      <div className="absolute inset-0 bg-charcoal" aria-hidden="true" />
+      <div className="absolute inset-y-0 left-0 w-[min(16%,7rem)] bg-primary" aria-hidden="true" />
+      <div className="absolute right-0 top-0 h-full w-[min(10%,4.5rem)] bg-ochre" aria-hidden="true" />
+      <div className="absolute right-[14%] top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-teal sm:h-36 sm:w-36" aria-hidden="true" />
+      <div className="absolute bottom-10 left-[20%] h-2.5 w-28 bg-cobalt" aria-hidden="true" />
+
+      <div className="relative z-[1] container mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.28em] text-ochre">
+            Next brief
+          </p>
+          <h2
+            id="cta-heading"
+            className="text-3xl font-bold uppercase leading-tight text-cream sm:text-4xl md:text-5xl"
+          >
+            Got a product to ship?
+          </h2>
+          <div className="mx-auto mt-5 flex h-1.5 w-28 overflow-hidden rounded-full" aria-hidden="true">
+            <span className="w-1/3 bg-primary" />
+            <span className="w-1/3 bg-ochre" />
+            <span className="w-1/3 bg-teal" />
+          </div>
+          <p className="mt-6 text-base leading-relaxed text-cream/80 sm:text-lg">
+            Tell me the problem, the stack constraints, and the deadline —
+            I&apos;ll bring the interface.
+          </p>
+          <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <a
+              href="#contact"
+              onClick={(e) => scrollToSection(e, 'contact')}
+              className="btn btn-primary inline-flex min-h-[52px] items-center justify-center px-8"
+            >
+              Start a project
+            </a>
+            <a
+              href="#portfolio"
+              onClick={(e) => scrollToSection(e, 'portfolio')}
+              className="btn inline-flex min-h-[52px] items-center justify-center border-2 border-ochre bg-ochre/10 px-8 text-ochre hover:bg-ochre hover:text-ink"
+            >
+              Browse work
+            </a>
           </div>
         </div>
       </div>

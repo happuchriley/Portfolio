@@ -6,10 +6,15 @@ import {
   WHATSAPP_E164,
 } from '../constants/contact';
 
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent("Hi — I'm reaching out from THE MISFITS portfolio.")}`;
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent(
+  "Hi — I'd like to start a project with THE MISFITS."
+)}`;
 
 const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY?.trim();
 const SUBMIT_COOLDOWN_MS = 45_000;
+
+const fieldClass =
+  'field-input w-full rounded-full border-2 border-ink/12 bg-paper px-5 py-3.5 text-base text-foreground placeholder:text-foreground/40 shadow-none transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:border-cream/15 dark:bg-charcoal dark:text-cream dark:placeholder:text-cream/40';
 
 const initialForm = {
   name: '',
@@ -34,28 +39,31 @@ const Contact = () => {
     e.preventDefault();
     setStatus(null);
 
-    if (formData.company) {
-      return;
-    }
+    if (formData.company) return;
 
     const now = Date.now();
     if (now - lastSubmitRef.current < SUBMIT_COOLDOWN_MS) {
       setStatus({
         type: 'error',
-        text: 'Please wait a moment before sending another message.',
+        text: 'Give it a moment before sending another note.',
       });
       return;
     }
 
-    if (!formData.name?.trim() || !formData.email?.trim() || !formData.subject?.trim() || !formData.message?.trim()) {
-      setStatus({ type: 'error', text: 'Please fill in all fields.' });
+    if (
+      !formData.name?.trim() ||
+      !formData.email?.trim() ||
+      !formData.subject?.trim() ||
+      !formData.message?.trim()
+    ) {
+      setStatus({ type: 'error', text: 'Fill in every field so I can reply properly.' });
       return;
     }
 
     if (!WEB3FORMS_KEY) {
       setStatus({
         type: 'info',
-        text: `I couldn’t send that from here — please use ${CONTACT_EMAILS.join(' or ')} or WhatsApp below.`,
+        text: `Form isn’t connected yet — email ${CONTACT_EMAILS.join(' or ')} or WhatsApp below.`,
       });
       return;
     }
@@ -83,18 +91,18 @@ const Contact = () => {
         setFormData(initialForm);
         setStatus({
           type: 'success',
-          text: 'Success! Your message has been sent. I’ll get back to you soon.',
+          text: 'Message sent. I’ll get back to you soon.',
         });
       } else {
         setStatus({
           type: 'error',
-          text: data.message || 'Something went wrong. Try email or WhatsApp instead.',
+          text: data.message || 'Something broke — try email or WhatsApp.',
         });
       }
     } catch {
       setStatus({
         type: 'error',
-        text: 'Network error. Please try again or use email / WhatsApp.',
+        text: 'Network issue. Retry, or use email / WhatsApp.',
       });
     } finally {
       setSubmitting(false);
@@ -102,90 +110,126 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-10 sm:py-12 lg:py-20 bg-background dark:bg-black" aria-labelledby="contact-heading">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="title wow fadeInUp" data-wow-delay="0.1s">
+    <section
+      id="contact"
+      className="w-full bg-paper py-16 sm:py-20 lg:py-28 dark:bg-charcoal paper-surface"
+      aria-labelledby="contact-heading"
+    >
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="mb-12 text-center sm:mb-14 wow fadeInUp" data-wow-delay="0.1s">
+          <div className="title">
             <div className="title-center">
-              <p className="relative inline-block text-base sm:text-lg font-light uppercase mb-2 text-foreground/80 dark:text-gray-400">
-                Contact
-              </p>
-              <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-dark dark:text-white border-b border-dark/20 dark:border-white/20 pb-2">
-                Get In Touch
+              <p className="section-kicker relative inline-block">Contact</p>
+              <h2
+                id="contact-heading"
+                className="section-title inline-block border-b-2 border-ink/15 pb-2 dark:border-cream/20"
+              >
+                Let’s talk
               </h2>
             </div>
           </div>
+          <p className="mx-auto mt-4 max-w-lg text-base text-foreground/75 dark:text-cream/65">
+            Briefs, collaborations, and roles — send the short version of what you’re building.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-[480px]:gap-10 lg:gap-12">
-          <div className="wow fadeInUp min-w-0" data-wow-delay="0.2s">
-            <div className="mb-8">
-              <h3 className="text-xl sm:text-2xl font-bold uppercase mb-4 text-dark dark:text-white">Let&apos;s Work Together</h3>
-              <p className="mb-6 text-base sm:text-lg text-foreground dark:text-gray-300">
-                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out if you&apos;d like to collaborate!
-              </p>
-            </div>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="wow fadeInUp min-w-0" data-wow-delay="0.15s">
+            <h3 className="mb-3 text-xl font-bold uppercase text-ink sm:text-2xl dark:text-cream">
+              Direct lines
+            </h3>
+            <p className="mb-8 max-w-md text-base leading-relaxed text-foreground/85 dark:text-cream/75">
+              Prefer a quick ping? Use email or WhatsApp. Prefer a structured brief? Use the form.
+            </p>
 
-            <address className="space-y-5 sm:space-y-6 not-italic">
-              <div className="flex gap-4 items-start">
-                <div className="btn-lg-square bg-primary rounded-full shrink-0 flex items-center justify-center min-h-[52px] min-w-[52px] sm:min-h-[60px] sm:min-w-[60px]" aria-hidden="true">
-                  <i className="fas fa-envelope text-white"></i>
-                </div>
-                <div className="min-w-0 pt-1">
-                  <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Email</h4>
-                  <div className="flex flex-col gap-1">
-                    {CONTACT_EMAILS.map((address) => (
-                      <a
-                        key={address}
-                        className="mb-0 text-foreground dark:text-gray-300 break-all hover:text-primary transition-colors"
-                        href={`mailto:${address}`}
-                      >
-                        {address}
-                      </a>
-                    ))}
+            <address className="space-y-5 not-italic">
+              {[
+                {
+                  icon: 'fas fa-envelope',
+                  bg: 'bg-primary',
+                  iconColor: 'text-white',
+                  title: 'Email',
+                  body: CONTACT_EMAILS.map((address) => (
+                    <a
+                      key={address}
+                      className="block break-all text-foreground transition-colors hover:text-primary dark:text-cream/85"
+                      href={`mailto:${address}`}
+                    >
+                      {address}
+                    </a>
+                  )),
+                },
+                {
+                  icon: 'fas fa-phone',
+                  bg: 'bg-ochre',
+                  iconColor: 'text-ink',
+                  title: 'Phone',
+                  body: (
+                    <a
+                      className="text-foreground transition-colors hover:text-ochre dark:text-cream/85"
+                      href={`tel:${PHONE_TEL}`}
+                    >
+                      {PHONE_DISPLAY}
+                    </a>
+                  ),
+                },
+                {
+                  icon: 'fas fa-map-marker-alt',
+                  bg: 'bg-teal',
+                  iconColor: 'text-white',
+                  title: 'Base',
+                  body: (
+                    <p className="mb-0 text-foreground dark:text-cream/85">
+                      Accra, Ghana · Remote-friendly
+                    </p>
+                  ),
+                },
+                {
+                  icon: 'fas fa-clock',
+                  bg: 'bg-cobalt',
+                  iconColor: 'text-white',
+                  title: 'Response',
+                  body: (
+                    <p className="mb-0 text-foreground dark:text-cream/85">
+                      Usually within one business day
+                    </p>
+                  ),
+                },
+              ].map((row) => (
+                <div key={row.title} className="flex items-start gap-4">
+                  <div
+                    className={`btn-lg-square ${row.bg} flex min-h-[52px] min-w-[52px] shrink-0 items-center justify-center sm:min-h-[56px] sm:min-w-[56px]`}
+                    aria-hidden="true"
+                  >
+                    <i className={`${row.icon} ${row.iconColor}`} />
+                  </div>
+                  <div className="min-w-0 pt-1">
+                    <h4 className="mb-1 text-sm font-bold uppercase tracking-wide text-ink dark:text-cream">
+                      {row.title}
+                    </h4>
+                    {row.body}
                   </div>
                 </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="btn-lg-square bg-primary rounded-full shrink-0 flex items-center justify-center min-h-[52px] min-w-[52px] sm:min-h-[60px] sm:min-w-[60px]" aria-hidden="true">
-                  <i className="fas fa-phone text-white"></i>
-                </div>
-                <div className="min-w-0 pt-1">
-                  <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Phone</h4>
-                  <a className="mb-0 text-foreground dark:text-gray-300 hover:text-primary transition-colors" href={`tel:${PHONE_TEL}`}>
-                    {PHONE_DISPLAY}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="btn-lg-square bg-primary rounded-full shrink-0 flex items-center justify-center min-h-[52px] min-w-[52px] sm:min-h-[60px] sm:min-w-[60px]" aria-hidden="true">
-                  <i className="fas fa-map-marker-alt text-white"></i>
-                </div>
-                <div className="min-w-0 pt-1">
-                  <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Location</h4>
-                  <p className="mb-0 text-foreground dark:text-gray-300">Available for Remote Work</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="btn-lg-square bg-primary rounded-full shrink-0 flex items-center justify-center min-h-[52px] min-w-[52px] sm:min-h-[60px] sm:min-w-[60px]" aria-hidden="true">
-                  <i className="fas fa-clock text-white"></i>
-                </div>
-                <div className="min-w-0 pt-1">
-                  <h4 className="text-base sm:text-lg font-bold uppercase mb-1 text-dark dark:text-white">Availability</h4>
-                  <p className="mb-0 text-foreground dark:text-gray-300">Always available — reach out anytime.</p>
-                </div>
-              </div>
+              ))}
             </address>
           </div>
 
-          <div className="wow fadeInUp min-w-0" data-wow-delay="0.4s">
-            <form onSubmit={handleSubmit} id="contactForm" aria-label="Contact form" noValidate className="relative">
+          <div className="wow fadeInUp min-w-0" data-wow-delay="0.25s">
+            <form
+              onSubmit={handleSubmit}
+              id="contactForm"
+              aria-label="Project inquiry form"
+              noValidate
+              className="relative overflow-hidden rounded-3xl border border-ink/10 bg-cream p-6 shadow-sm dark:border-cream/10 dark:bg-surface sm:p-8"
+            >
+              <div className="absolute left-0 top-0 h-full w-1.5 bg-primary" aria-hidden="true" />
+              <div className="absolute right-0 top-0 h-full w-1.5 bg-teal" aria-hidden="true" />
+              <p className="mb-5 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ochre">
+                Project brief
+              </p>
               <div className="space-y-4">
                 <div
-                  className="absolute left-0 top-0 -z-10 h-0 w-0 overflow-hidden opacity-0 pointer-events-none"
+                  className="pointer-events-none absolute left-0 top-0 -z-10 h-0 w-0 overflow-hidden opacity-0"
                   aria-hidden="true"
                 >
                   <label htmlFor="contact-company">Company</label>
@@ -200,9 +244,9 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <label htmlFor="name" className="block text-sm font-semibold text-dark dark:text-gray-200 mb-1.5">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label htmlFor="name" className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-ink dark:text-cream">
                       Name
                     </label>
                     <input
@@ -212,14 +256,14 @@ const Contact = () => {
                       autoComplete="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-base bg-background dark:bg-dark border border-dark/15 dark:border-white/15 rounded-lg text-foreground dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                      className={fieldClass}
                       placeholder="Your name"
                       required
                       maxLength={200}
                     />
                   </div>
-                  <div className="relative">
-                    <label htmlFor="email" className="block text-sm font-semibold text-dark dark:text-gray-200 mb-1.5">
+                  <div>
+                    <label htmlFor="email" className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-ink dark:text-cream">
                       Email
                     </label>
                     <input
@@ -229,16 +273,16 @@ const Contact = () => {
                       autoComplete="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 text-base bg-background dark:bg-dark border border-dark/15 dark:border-white/15 rounded-lg text-foreground dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                      placeholder="your@email.com"
+                      className={fieldClass}
+                      placeholder="you@company.com"
                       required
                       maxLength={254}
                     />
                   </div>
                 </div>
 
-                <div className="relative">
-                  <label htmlFor="subject" className="block text-sm font-semibold text-dark dark:text-gray-200 mb-1.5">
+                <div>
+                  <label htmlFor="subject" className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-ink dark:text-cream">
                     Subject
                   </label>
                   <input
@@ -247,38 +291,39 @@ const Contact = () => {
                     id="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-base bg-background dark:bg-dark border border-dark/15 dark:border-white/15 rounded-lg text-foreground dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                    placeholder="What is this about?"
+                    className={fieldClass}
+                    placeholder="New product UI / rebuild / role…"
                     required
                     maxLength={200}
                   />
                 </div>
 
-                <div className="relative">
-                  <label htmlFor="message" className="block text-sm font-semibold text-dark dark:text-gray-200 mb-1.5">
-                    Message
+                <div>
+                  <label htmlFor="message" className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-ink dark:text-cream">
+                    Brief
                   </label>
                   <textarea
                     name="message"
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="contact-message w-full px-4 py-3 text-base bg-background dark:bg-dark border border-dark/15 dark:border-white/15 rounded-lg text-foreground dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-y"
-                    placeholder="Leave a message here"
+                    className={`${fieldClass} contact-message !rounded-2xl resize-y`}
+                    placeholder="What are you building, who’s it for, and when do you need it?"
                     required
                     maxLength={5000}
-                  ></textarea>
+                    rows={5}
+                  />
                 </div>
 
                 {status && (
                   <p
                     role="status"
-                    className={`rounded-lg px-4 py-3 text-sm ${
+                    className={`rounded-2xl border-2 px-4 py-3 text-sm ${
                       status.type === 'success'
-                        ? 'bg-green-500/15 text-green-800 dark:text-green-300 border border-green-500/30'
+                        ? 'border-teal/40 bg-teal/10 text-teal dark:text-teal'
                         : status.type === 'info'
-                          ? 'bg-amber-500/10 text-amber-900 dark:text-amber-200 border border-amber-500/25'
-                          : 'bg-red-500/10 text-red-800 dark:text-red-300 border border-red-500/25'
+                          ? 'border-ochre/40 bg-ochre/10 text-ink dark:text-ochre'
+                          : 'border-primary/40 bg-primary/10 text-primary'
                     }`}
                   >
                     {status.text}
@@ -288,21 +333,23 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="btn btn-primary w-full py-3 min-h-[48px] text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn btn-primary w-full min-h-[52px] py-3.5 text-base disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {submitting ? 'Sending…' : 'Send Message'}
+                  {submitting ? 'Sending…' : 'Send brief'}
                 </button>
 
-                <p className="text-center text-sm text-foreground/80 dark:text-gray-400 pt-1">or</p>
+                <p className="pt-1 text-center text-xs font-semibold uppercase tracking-wider text-foreground/50 dark:text-cream/45">
+                  or
+                </p>
 
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-full border-2 border-[#25D366] bg-[#25D366]/10 px-3 min-[400px]:px-4 py-3 text-sm min-[400px]:text-base font-semibold text-[#128C7E] transition-colors hover:bg-[#25D366] hover:text-white dark:border-[#25D366] dark:bg-[#25D366]/15 dark:text-[#25D366] dark:hover:text-white text-center"
+                  className="flex w-full min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-[#25D366] bg-[#25D366]/10 px-4 py-3 text-sm font-bold uppercase tracking-wide text-[#128C7E] transition-colors hover:bg-[#25D366] hover:text-white dark:text-[#25D366] dark:hover:text-white"
                 >
-                  <i className="fab fa-whatsapp text-xl" aria-hidden="true"></i>
-                  Chat on WhatsApp
+                  <i className="fab fa-whatsapp text-xl" aria-hidden="true" />
+                  WhatsApp
                 </a>
               </div>
             </form>

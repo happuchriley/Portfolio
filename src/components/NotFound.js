@@ -10,7 +10,7 @@ const NotFound = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="min-h-dvh flex flex-col overflow-x-hidden bg-background dark:bg-black">
+    <div className="min-h-dvh flex flex-col overflow-x-hidden bg-background dark:bg-charcoal">
       <SEO
         title="Page not found"
         description="The page you requested could not be found. Return to THE MISFITS portfolio homepage."
@@ -18,51 +18,62 @@ const NotFound = () => {
         noindex
       />
       <Navbar />
-      
+
       <main id="main-content" tabIndex={-1} className="flex flex-col flex-grow outline-none">
-        <div className="relative w-full">
-          <div 
-            className="page-header bg-gradient-to-b from-black/70 to-black/90 py-12 sm:py-16 md:py-20"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${process.env.PUBLIC_URL}/img/carousel-1.jpg)`,
-              backgroundPosition: 'top center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-            }}
-          >
-            <div className="container mx-auto px-4 max-w-7xl text-center">
-              <p className="text-sm sm:text-base font-semibold uppercase tracking-wider text-white/80 mb-2 animate-slideInDown">
-                Error 404
-              </p>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold uppercase mb-4 animate-slideInDown text-white">
-                Page Not Found
-              </h1>
-              <nav aria-label="Breadcrumb" className="animate-slideInDown">
-                <ol className="flex justify-center items-center flex-wrap gap-x-2 gap-y-1 text-xs sm:text-sm uppercase">
-                  <li><a href="/" className="text-white hover:text-primary transition-colors min-h-[44px] inline-flex items-center" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a></li>
-                  <li className="text-white" aria-hidden="true">/</li>
-                  <li className="text-primary">404</li>
-                </ol>
-              </nav>
-            </div>
+        <div className="relative w-full overflow-hidden paper-surface py-16 sm:py-20 md:py-24">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute right-0 top-0 h-full w-1/3 bg-primary" />
+            <div className="absolute left-[10%] bottom-[20%] h-20 w-20 rounded-full bg-ink dark:bg-cream" />
+          </div>
+          <div className="relative z-[1] container mx-auto px-4 max-w-7xl text-center">
+            <p className="section-kicker mb-2 animate-slideInDown">Error 404</p>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold uppercase mb-4 animate-slideInDown text-ink dark:text-cream">
+              Page Not Found
+            </h1>
+            <nav aria-label="Breadcrumb" className="animate-slideInDown">
+              <ol className="flex justify-center items-center flex-wrap gap-x-2 gap-y-1 text-xs sm:text-sm uppercase font-semibold">
+                <li>
+                  <a
+                    href="/"
+                    className="text-ink dark:text-cream hover:text-primary transition-colors min-h-[44px] inline-flex items-center"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate('/');
+                    }}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li className="text-ink/40 dark:text-cream/40" aria-hidden="true">
+                  /
+                </li>
+                <li className="text-primary">404</li>
+              </ol>
+            </nav>
           </div>
         </div>
 
-        <div className="flex-grow w-full py-10 sm:py-12 lg:py-20 bg-secondary dark:bg-dark">
+        <div className="flex-grow w-full py-10 sm:py-12 lg:py-20 bg-paper dark:bg-charcoal">
           <div className="container mx-auto px-4 max-w-7xl text-center">
             <div className="flex justify-center">
               <div className="w-full max-w-lg">
-                <i className="bi bi-exclamation-triangle text-5xl sm:text-6xl md:text-8xl text-primary wow fadeInUp mb-4" data-wow-delay="0.1s" aria-hidden="true"></i>
-                <p className="text-6xl sm:text-7xl md:text-9xl font-bold wow fadeInUp mb-2 text-dark/90 dark:text-white/90" data-wow-delay="0.2s" aria-hidden="true">
+                <p
+                  className="text-6xl sm:text-7xl md:text-9xl font-bold wow fadeInUp mb-2 text-primary"
+                  data-wow-delay="0.2s"
+                  aria-hidden="true"
+                >
                   404
                 </p>
-                <p className="text-base sm:text-lg mb-8 wow fadeInUp text-foreground dark:text-gray-300" data-wow-delay="0.4s">
-                  We&apos;re sorry — the page you&apos;re looking for doesn&apos;t exist. Head back to the homepage to explore the portfolio.
+                <p
+                  className="text-base sm:text-lg mb-8 wow fadeInUp text-foreground dark:text-cream/85"
+                  data-wow-delay="0.4s"
+                >
+                  That page doesn&apos;t exist. Head home to explore the portfolio.
                 </p>
                 <button
                   type="button"
                   onClick={() => navigate('/')}
-                  className="btn btn-outline-primary border-2 py-3 px-8 min-h-[48px] wow fadeInUp"
+                  className="btn btn-primary py-3 px-8 min-h-[48px] wow fadeInUp"
                   data-wow-delay="0.5s"
                 >
                   Go Back To Home

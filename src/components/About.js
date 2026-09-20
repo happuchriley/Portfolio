@@ -1,157 +1,131 @@
-import React from "react";
+import React from 'react';
+
+const CAPABILITIES = [
+  { title: 'Systems', detail: 'Component architecture & TypeScript', color: 'bg-primary' },
+  { title: 'Commerce', detail: 'APIs, auth, Paystack & Stripe', color: 'bg-ochre' },
+  { title: 'Craft', detail: 'Design systems & responsive UI', color: 'bg-teal' },
+  { title: 'Ship', detail: 'CI/CD & Core Web Vitals', color: 'bg-cobalt' },
+];
 
 const About = () => {
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
       id="about"
-      className="w-full bg-secondary py-10 sm:py-12 lg:py-20 dark:bg-dark"
+      className="relative w-full overflow-hidden bg-cream dark:bg-charcoal"
       aria-labelledby="about-heading"
     >
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center gap-6 min-[480px]:gap-8 lg:gap-12">
-          <div className="w-full min-w-0 lg:w-7/12 pb-0 lg:pb-12 py-6 sm:py-8 lg:py-12">
-            <div className="title wow fadeInUp" data-wow-delay="0.1s">
-              <div className="title-left">
-                <p className="relative inline-block text-base sm:text-lg font-light uppercase mb-2 text-foreground/80 dark:text-gray-400">
-                  About Me
+      <div className="grid lg:grid-cols-2">
+        {/* Manifesto panel */}
+        <div className="relative flex flex-col justify-between border-b border-ink/10 px-4 py-16 sm:px-8 sm:py-20 lg:border-b-0 lg:border-r lg:border-ink/10 lg:px-12 lg:py-24 dark:border-cream/10">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <p className="absolute -left-4 bottom-8 font-display text-[clamp(5rem,22vw,12rem)] font-bold uppercase leading-none tracking-tighter text-ink/[0.04] dark:text-cream/[0.05]">
+              DT
+            </p>
+            <div className="absolute right-8 top-12 h-24 w-24 rounded-full bg-ochre/80 sm:h-32 sm:w-32" />
+          </div>
+
+          <div className="relative z-[1]">
+            <p className="mb-3 text-[0.65rem] font-bold uppercase tracking-[0.35em] text-primary">
+              About
+            </p>
+            <h2
+              id="about-heading"
+              className="font-display text-[clamp(2.4rem,5vw,4rem)] font-bold uppercase leading-[0.92] tracking-tight text-ink dark:text-cream"
+            >
+              Not a
+              <br />
+              template.
+              <br />
+              <span className="text-primary">A studio.</span>
+            </h2>
+
+            <p className="mt-6 max-w-md text-base leading-relaxed text-foreground/85 sm:text-lg dark:text-cream/80">
+              I&apos;m Derrick Teye — I design and ship production interfaces with React
+              and Next.js. Clear architecture, sharp UX, deploys that hold up past the demo.
+            </p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-foreground/70 dark:text-cream/60">
+              Less cookie-cutter SaaS. More craft you can feel in the first scroll.
+            </p>
+          </div>
+
+          <div className="relative z-[1] mt-12 grid grid-cols-2 gap-px bg-ink/15 dark:bg-cream/15">
+            {CAPABILITIES.map((item) => (
+              <div
+                key={item.title}
+                className="bg-cream p-4 sm:p-5 dark:bg-charcoal"
+              >
+                <span className={`mb-3 block h-1.5 w-8 ${item.color}`} aria-hidden="true" />
+                <p className="font-display text-sm font-bold uppercase tracking-wide text-ink dark:text-cream">
+                  {item.title}
                 </p>
-                <h2
-                  id="about-heading"
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-dark dark:text-white border-b border-dark/20 dark:border-white/20 pb-2"
-                >
-                  Frontend Developer
-                </h2>
+                <p className="mt-1 text-xs leading-snug text-foreground/65 dark:text-cream/55">
+                  {item.detail}
+                </p>
               </div>
-            </div>
-            <p
-              className="mb-4 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
-              data-wow-delay="0.2s"
+            ))}
+          </div>
+
+          <div className="relative z-[1] mt-10 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#portfolio"
+              onClick={(e) => scrollToSection(e, 'portfolio')}
+              className="btn btn-primary min-h-[48px] px-8 py-3.5 text-center"
             >
-              I'm a passionate Frontend Developer with 3+ years of experience
-              building production web applications with modern JavaScript
-              frameworks. I specialize in React and Next.js — architecting
-              component-based UIs, integrating REST APIs and Supabase, and
-              shipping performant apps to Netlify.
-            </p>
-            <p
-              className="mb-6 text-base sm:text-lg text-foreground dark:text-gray-300 wow fadeInUp hyphens-auto break-words"
-              data-wow-delay="0.25s"
+              See the work
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => scrollToSection(e, 'contact')}
+              className="inline-flex min-h-[48px] items-center justify-center border-2 border-ink px-8 text-sm font-bold uppercase tracking-wide text-ink transition hover:bg-ink hover:text-cream dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-charcoal"
             >
-              My toolkit spans TypeScript, Tailwind CSS, React Router, state
-              management patterns, and AI-assisted workflows with Cursor and
-              GitHub Copilot. I focus on clean architecture, accessibility, and
-              measurable performance — not just pixels, but code that teams can
-              maintain and scale.
-            </p>
-            <ul
-              className="list-none mb-6 space-y-3 wow fadeInUp"
-              data-wow-delay="0.3s"
-            >
-              <li className="flex items-center text-foreground dark:text-gray-300">
-                <i
-                  className="fa fa-check-circle text-primary mr-2"
-                  aria-hidden="true"
-                ></i>
-                3+ Years building with React, Next.js &amp; TypeScript
-              </li>
-              <li className="flex items-center text-foreground dark:text-gray-300">
-                <i
-                  className="fa fa-check-circle text-primary mr-2"
-                  aria-hidden="true"
-                ></i>
-                Component architecture, hooks &amp; REST API integration
-              </li>
-              <li className="flex items-center text-foreground dark:text-gray-300">
-                <i
-                  className="fa fa-check-circle text-primary mr-2"
-                  aria-hidden="true"
-                ></i>
-                Tailwind CSS, design systems &amp; responsive UI at scale
-              </li>
-              <li className="flex items-center text-foreground dark:text-gray-300">
-                <i
-                  className="fa fa-check-circle text-primary mr-2"
-                  aria-hidden="true"
-                ></i>
-                Deployment, CI/CD &amp; Core Web Vitals optimization
-              </li>
-            </ul>
-            <div
-              className="flex flex-wrap gap-2 mb-8 wow fadeInUp"
-              data-wow-delay="0.35s"
-              aria-label="Technologies and frameworks"
-            >
-              {[
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Supabase",
-                "Vite",
-                "Netlify",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary border border-primary/30 rounded-full text-xs sm:text-sm font-semibold"
-                >
-                  {tech}
+              Start a project
+            </a>
+          </div>
+        </div>
+
+        {/* Portrait plane */}
+        <div className="relative min-h-[28rem] bg-paper dark:bg-charcoal-lift sm:min-h-[32rem] lg:min-h-full">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute inset-y-0 left-0 w-1/3 bg-primary" />
+            <div className="absolute bottom-[18%] right-[12%] h-20 w-20 rounded-full bg-teal sm:h-28 sm:w-28" />
+            <div className="absolute right-[8%] top-[10%] h-3 w-24 bg-ochre" />
+          </div>
+
+          <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12 lg:p-16">
+            <figure className="relative w-full max-w-sm">
+              <div
+                className="absolute -inset-3 translate-x-3 translate-y-3 bg-ink dark:bg-cream/20"
+                aria-hidden="true"
+              />
+              <img
+                src="/img/about.png"
+                alt="Derrick Teye, Frontend Developer"
+                className="relative aspect-[3/4] w-full border-4 border-ink object-cover object-top dark:border-cream/40"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="relative mt-4 flex items-center justify-between">
+                <span className="font-display text-sm font-bold uppercase tracking-wider text-ink dark:text-cream">
+                  Derrick Teye
                 </span>
-              ))}
-            </div>
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 wow fadeInUp"
-              data-wow-delay="0.4s"
-            >
-              <a
-                href="#portfolio"
-                onClick={(e) => scrollToSection(e, "portfolio")}
-                className="btn btn-outline-primary border-2 py-3 w-full text-center"
-              >
-                View Portfolio
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, "contact")}
-                className="btn btn-primary py-3 w-full text-center"
-              >
-                Get In Touch
-              </a>
-            </div>
+                <span className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-foreground/50 dark:text-cream/45">
+                  Accra · Remote
+                </span>
+              </figcaption>
+            </figure>
           </div>
-          <div
-            className="w-full min-w-0 lg:w-5/12 wow fadeInUp px-4 sm:px-6 lg:px-2 py-6 sm:py-8"
-            data-wow-delay="0.5s"
+
+          <p
+            className="pointer-events-none absolute bottom-6 right-6 hidden font-display text-[0.7rem] font-bold uppercase tracking-[0.4em] text-ink/30 [writing-mode:vertical-rl] dark:text-cream/25 lg:block"
+            aria-hidden="true"
           >
-            <div className="relative mx-auto max-w-md lg:max-w-none pt-6 pr-6 pb-10 pl-10 sm:pt-8 sm:pr-8 sm:pb-12 sm:pl-14">
-              <div
-                className="pointer-events-none absolute left-0 top-0 h-[72%] w-[78%] rounded-2xl border-2 border-primary/50 bg-primary/10 dark:bg-primary/15"
-                aria-hidden="true"
-              />
-              <div
-                className="pointer-events-none absolute bottom-2 right-0 h-16 w-16 sm:h-20 sm:w-20 border-b-[3px] border-r-[3px] border-primary rounded-br-2xl"
-                aria-hidden="true"
-              />
-              <div className="relative rounded-2xl border-2 border-primary/80 bg-background p-4 sm:p-5 lg:p-6 shadow-lg shadow-primary/10 dark:bg-black/40 dark:shadow-black/50">
-                <div className="overflow-hidden rounded-xl ring-1 ring-black/5 dark:ring-white/10">
-                  <img
-                    src="/img/about.png"
-                    alt="Derrick Teye, Frontend Developer"
-                    className="w-full aspect-[3/4] max-h-[min(70vh,520px)] object-cover object-top"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+            Frontend developer
+          </p>
         </div>
       </div>
     </section>

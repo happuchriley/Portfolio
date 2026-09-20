@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/** Decorative strip — duplicated for a seamless repeat-x marquee */
 const TECH_ICONS = [
   { icon: 'fab fa-react', size: 'text-[2.75rem] sm:text-5xl', offset: 'mb-2 sm:mb-3' },
   { icon: 'fab fa-node-js', size: 'text-[2.5rem] sm:text-4xl', offset: 'mb-3 sm:mb-4' },
@@ -24,86 +23,73 @@ const Footer = () => {
 
   return (
     <footer
-      className="footer-with-tech-strip w-full text-gray-100 border-t border-white/10 dark:border-white/10"
+      className="footer-with-tech-strip w-full border-t border-cream/10 text-cream"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/img/footer-bg.jpg)`,
       }}
     >
-      <div className="relative z-[1] container mx-auto max-w-7xl text-center px-3 sm:px-4 py-10 sm:py-12 lg:py-16 pb-28 sm:pb-32">
-        <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="inline-block min-h-[44px] max-w-full">
-          <p className="text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5 sm:mb-6 text-white uppercase font-josefin font-bold leading-tight break-words px-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]">
-            <i className="fas fa-code mr-1 sm:mr-2" aria-hidden="true"></i>THE MISFITS
+      <div className="relative z-[1] container mx-auto max-w-7xl px-3 py-12 text-center sm:px-4 sm:py-16 lg:pb-32 pb-28">
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate('/');
+          }}
+          className="inline-block min-h-[44px] max-w-full"
+        >
+          <p className="mb-4 px-1 text-2xl font-bold uppercase leading-tight text-cream min-[400px]:text-3xl sm:mb-5 sm:text-4xl md:text-5xl lg:text-6xl font-display">
+            <span
+              className="mr-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary align-middle text-xs text-white sm:h-10 sm:w-10 sm:text-sm"
+              aria-hidden="true"
+            >
+              TM
+            </span>
+            THE MISFITS
           </p>
         </a>
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
-          <a
-            href="https://github.com/happuchriley/Portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-lg-square btn-outline-primary border-2 m-1 flex items-center justify-center min-h-[48px] min-w-[48px]"
-            title="GitHub"
-            aria-label="GitHub (opens in new tab)"
-          >
-            <i className="fab fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-lg-square btn-outline-primary border-2 m-1 flex items-center justify-center min-h-[48px] min-w-[48px]"
-            title="LinkedIn"
-            aria-label="LinkedIn (opens in new tab)"
-          >
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-lg-square btn-outline-primary border-2 m-1 flex items-center justify-center min-h-[48px] min-w-[48px]"
-            title="Twitter"
-            aria-label="Twitter (opens in new tab)"
-          >
-            <i className="fab fa-x-twitter"></i>
-          </a>
-          <a
-            href="https://dribbble.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-lg-square btn-outline-primary border-2 m-1 flex items-center justify-center min-h-[48px] min-w-[48px]"
-            title="Dribbble"
-            aria-label="Dribbble (opens in new tab)"
-          >
-            <i className="fab fa-dribbble"></i>
-          </a>
+        <p className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-ochre sm:text-base">
+          Frontend studio · Accra & remote
+        </p>
+        <div className="mb-10 flex flex-wrap justify-center gap-2 sm:gap-3">
+          {[
+            {
+              href: 'https://github.com/happuchriley/Portfolio',
+              icon: 'fab fa-github',
+              label: 'GitHub',
+            },
+            { href: 'https://linkedin.com', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+            { href: 'https://twitter.com', icon: 'fab fa-x-twitter', label: 'Twitter' },
+            { href: 'https://dribbble.com', icon: 'fab fa-dribbble', label: 'Dribbble' },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-lg-square m-1 flex min-h-[48px] min-w-[48px] items-center justify-center border-2 border-cream/35 text-cream transition-colors hover:border-primary hover:bg-primary hover:text-white"
+              title={s.label}
+              aria-label={`${s.label} (opens in new tab)`}
+            >
+              <i className={s.icon} />
+            </a>
+          ))}
         </div>
-        <p className="mb-2 text-sm sm:text-base px-2 break-words text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-          &copy;{' '}
+        <p className="mb-2 px-2 text-sm text-cream/90">
+          © {new Date().getFullYear()}{' '}
           <a
             href="/"
             onClick={(e) => {
               e.preventDefault();
               navigate('/');
             }}
-            className="border-b border-white/40 hover:text-primary transition-colors"
+            className="border-b border-cream/40 transition-colors hover:text-ochre"
           >
             THE MISFITS
           </a>
-          , All Right Reserved.
+          . All rights reserved.
         </p>
-        <p className="mb-2 text-sm sm:text-base text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-          Frontend Developer &amp; UI/UX Enthusiast
-        </p>
-        <p className="mb-0 text-xs sm:text-sm text-white/75 drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-          Developed by{' '}
-          <a
-            href="https://portfolio.theemisfits.com"
-            target="_blank"
-            rel="noopener noreferrer author"
-            className="border-b border-white/30 hover:text-primary transition-colors"
-          >
-            THE MISFITS
-          </a>
+        <p className="mb-0 text-xs text-cream/65 sm:text-sm">
+          Crafted for product teams who want interfaces with a point of view.
         </p>
       </div>
 
@@ -111,7 +97,7 @@ const Footer = () => {
         <div className="footer-tech-strip-track">
           {MARQUEE_ICONS.map((item, index) => (
             <span key={index} className={`footer-tech-icon ${item.size} ${item.offset}`}>
-              <i className={item.icon}></i>
+              <i className={item.icon} />
             </span>
           ))}
         </div>

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import StudioPuzzle from './components/StudioPuzzle';
 import CTA from './components/CTA';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
@@ -24,6 +25,7 @@ function Home() {
       <main id="main-content" tabIndex={-1} className="outline-none flex-1 w-full min-w-0">
         <Hero />
         <About />
+        <StudioPuzzle />
         <Services />
         <CTA />
         <Portfolio />
@@ -88,7 +90,7 @@ function App() {
         v7_relativeSplatPath: true,
       }}
     >
-      <div className="App min-h-dvh flex flex-col w-full min-w-0 overflow-x-hidden bg-background text-foreground dark:bg-black dark:text-gray-300">
+      <div className="App min-h-dvh flex flex-col w-full min-w-0 overflow-x-hidden bg-background text-foreground dark:bg-charcoal dark:text-cream/90">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

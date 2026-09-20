@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { initFaviconListener } from '../utils/favicon';
 
 const ThemeContext = createContext({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
   setTheme: () => {},
 });
@@ -10,14 +10,14 @@ const ThemeContext = createContext({
 const STORAGE_KEY = 'theme';
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'dark';
+  if (typeof window === 'undefined') return 'light';
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'light' || stored === 'dark') return stored;
   } catch {
     /* ignore */
   }
-  return 'dark';
+  return 'light';
 }
 
 export function ThemeProvider({ children }) {
@@ -39,10 +39,10 @@ export function ThemeProvider({ children }) {
     }
     root.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
 
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
-      meta.setAttribute('content', theme === 'dark' ? '#000000' : '#FFFFFF');
-    }
+    const metas = document.querySelectorAll('meta[name="theme-color"]');
+    metas.forEach((meta) => {
+      meta.setAttribute('content', theme === 'dark' ? '#2B2B2B' : '#F7F0E4');
+    });
   }, [theme]);
 
   const toggleTheme = () => setThemeState((t) => (t === 'dark' ? 'light' : 'dark'));

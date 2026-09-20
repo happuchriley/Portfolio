@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'THE MISFITS';
-const DEFAULT_TITLE = 'THE MISFITS — Frontend Developer Portfolio';
+const DEFAULT_TITLE = 'THE MISFITS — Frontend Studio';
 const DEFAULT_DESCRIPTION =
-  'THE MISFITS — Frontend Developer specializing in React, Next.js, TypeScript, and Tailwind CSS. Building scalable SPAs, integrating APIs, and shipping performant web apps. Open to remote work and collaborations.';
+  'THE MISFITS — frontend studio by Derrick Teye. React, Next.js, and TypeScript product UI with craft — Accra & remote.';
 const DEFAULT_KEYWORDS =
-  'Frontend Developer, React developer, Next.js, TypeScript, Tailwind CSS, JavaScript, web developer, portfolio, UI developer, SPA, Supabase, Netlify, Ghana, remote developer';
+  'THE MISFITS, Frontend Developer, React, Next.js, TypeScript, Tailwind CSS, portfolio, UI, Accra, remote, ecommerce, Paystack';
 const DEFAULT_SITE_URL = 'https://portfolio.theemisfits.com';
 const DEFAULT_IMAGE = '/img/the-misfits-logo.png';
 const TWITTER_HANDLE = '@themisfits';

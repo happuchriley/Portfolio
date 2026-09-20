@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: public/img/projects
+public_folder: /img/projects
+collections:
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: public/data/projects-entries
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - { label: "ID / Slug", name: id, widget: string }
+      - { label: "Title", name: title, widget: string }
+      - { label: "Category", name: category, widget: string }
+      - { label: "Short description", name: blurb, widget: text }
+      - { label: "Cover image", name: image, widget: image }
+      - { label: "Image CSS class", name: imageClass, widget: string, default: "object-cover object-top", required: false }
+      - { label: "Technologies", name: technologies, widget: list, allow_add: true }
+      - { label: "Live URL", name: link, widget: string, required: false }
+      - { label: "Featured", name: featured, widget: boolean, default: false }
+      - { label: "Published", name: published, widget: boolean, default: true }
+      - { label: "Order", name: order, widget: number, value_type: int, default: 10 }
+  - name: projects_file
+    label: Projects (all-in-one JSON)
+    files:
+      - label: Projects list
+        name: projects
+        file: public/data/projects.json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID", name: id, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Category", name: category, widget: string }
+              - { label: "Short description", name: blurb, widget: text }
+              - { label: "Cover image", name: image, widget: image }
+              - { label: "Image CSS class", name: imageClass, widget: string, default: "object-cover object-top", required: false }
+              - { label: "Technologies", name: technologies, widget: list }
+              - { label: "Live URL", name: link, widget: string, required: false }
+              - { label: "Featured", name: featured, widget: boolean, default: false }
+              - { label: "Published", name: published, widget: boolean, default: true }
+              - { label: "Order", name: order, widget: number, value_type: int, default: 10 }

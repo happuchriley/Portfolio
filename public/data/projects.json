@@ -1,0 +1,82 @@
+{
+  "projects": [
+    {
+      "id": "misfits-shop",
+      "title": "The Misfits Shop",
+      "category": "E-commerce",
+      "blurb": "Brand storefront — catalog, cart, and a checkout path ready for real orders.",
+      "image": "/img/misfits-shop.jpg",
+      "imageClass": "object-cover object-top",
+      "technologies": ["React", "TypeScript", "Supabase", "Styled Components"],
+      "link": "https://theemisfits.com/",
+      "featured": true,
+      "published": true,
+      "order": 1
+    },
+    {
+      "id": "gloss-girlies",
+      "title": "Gloss Girlies",
+      "category": "Brand site",
+      "blurb": "Beauty brand UI with Vue, Supabase, and a responsive product experience.",
+      "image": "/img/gloss-girlies.jpg",
+      "imageClass": "object-cover object-top",
+      "technologies": ["Vue.js", "Supabase", "Tailwind CSS", "Vuex"],
+      "link": "https://glossgirlies.netlify.app/",
+      "featured": false,
+      "published": true,
+      "order": 2
+    },
+    {
+      "id": "skuul",
+      "title": "Skuul",
+      "category": "Education",
+      "blurb": "School admin workflows — students, records, and day-to-day operations in one UI.",
+      "image": "/img/skuul.jpg",
+      "imageClass": "object-cover object-top",
+      "technologies": ["Next.js", "React", "GraphQL", "Stripe"],
+      "link": "https://sku-ul.netlify.app/",
+      "featured": false,
+      "published": true,
+      "order": 3
+    },
+    {
+      "id": "audit-software",
+      "title": "Audit Software",
+      "category": "Enterprise",
+      "blurb": "Audit tooling with charts, reporting surfaces, and PWA-ready delivery.",
+      "image": "/img/audit-software.jpg",
+      "imageClass": "object-cover object-top",
+      "technologies": ["React", "Firebase", "Chart.js", "PWA"],
+      "link": "https://excelz-audit.vercel.app/",
+      "featured": false,
+      "published": true,
+      "order": 4
+    },
+    {
+      "id": "farm-flux",
+      "title": "Farm-Flux",
+      "category": "Operations",
+      "blurb": "Live operations dashboard — auth, feeds, and status at a glance.",
+      "image": "/img/farm-flux.jpg",
+      "imageClass": "object-cover object-center",
+      "technologies": ["Next.js", "PostgreSQL", "Tailwind CSS", "Auth"],
+      "link": "https://farm-flux.netlify.app/",
+      "featured": false,
+      "published": true,
+      "order": 5
+    },
+    {
+      "id": "misfits-portfolio",
+      "title": "THE MISFITS Portfolio",
+      "category": "Studio",
+      "blurb": "This site — collage brand system, React, and Netlify deploy.",
+      "image": "/img/misfits-portfolio.jpg",
+      "imageClass": "object-cover object-top",
+      "technologies": ["React", "Tailwind CSS", "React Router", "Netlify"],
+      "link": "https://portfolio.theemisfits.com/",
+      "featured": false,
+      "published": true,
+      "order": 6
+    }
+  ]
+}
